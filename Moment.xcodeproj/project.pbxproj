@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E092856271100EDC807 /* UIImageFileManager.swift */; };
 		C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5328537E1E00CA8600 /* MomentApp.swift */; };
 		C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5528537E1E00CA8600 /* ContentView.swift */; };
 		C1F48C5828537E1E00CA8600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F48C5728537E1E00CA8600 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C19F0E092856271100EDC807 /* UIImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFileManager.swift; sourceTree = "<group>"; };
 		C1F48C5028537E1E00CA8600 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F48C5328537E1E00CA8600 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		C1F48C5528537E1E00CA8600 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				C1F48C5528537E1E00CA8600 /* ContentView.swift */,
 				C1F48C5728537E1E00CA8600 /* Assets.xcassets */,
 				C1F48C5C28537E1E00CA8600 /* Persistence.swift */,
+				C19F0E092856271100EDC807 /* UIImageFileManager.swift */,
 				C1F48C5E28537E1E00CA8600 /* Moment.xcdatamodeld */,
 				C1F48C5928537E1E00CA8600 /* Preview Content */,
 			);
@@ -266,6 +269,7 @@
 				C1F48C5D28537E1E00CA8600 /* Persistence.swift in Sources */,
 				C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */,
 				C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */,
+				C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */,
 				C1F48C6028537E1E00CA8600 /* Moment.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
