@@ -1,6 +1,6 @@
 //
 //  ImageManager.swift
-//  ImagePickerTest
+//  Moment
 //
 //  Created by 김민재 on 2022/06/10.
 //
