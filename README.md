@@ -31,7 +31,7 @@
 
 ## :people_hugging: Authors
 
-|<img src="https://github.com/BrightHyeon.png">|<img src="https://github.com/hanyeonhee.png">|<img src="https://github.com/KyuHwan00.png">|<img src="https://github.com/minjae9610.png">|<img src="https://github.com/myungjinsim.png">|<img src="https://github.com/profit0124.png">|
+|<img src="https://user-images.githubusercontent.com/33242880/174058911-c089f0cb-05b7-465c-a64e-0c2e7ee75af5.png">|<img src="https://user-images.githubusercontent.com/33242880/174058909-47add89c-bae8-4603-a3e9-0e84b8bae7f6.png">|<img src="https://user-images.githubusercontent.com/33242880/174058912-850e52d4-3670-404c-a294-1d91b5e0dd78.png">|<img src="https://user-images.githubusercontent.com/33242880/174058899-9be51153-3fc4-4544-8273-2f35d012f5b9.png">|<img src="https://user-images.githubusercontent.com/33242880/174058903-8149f453-495a-4294-81a1-356abb720517.png">|<img src="https://user-images.githubusercontent.com/33242880/174058905-78df0f70-ad0d-49a9-9a84-53ac064a6ee9.png">|
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |[Tamna(HyeonSoo Kim)](https://github.com/BrightHyeon)|[Jessica(YeonheeHan)](https://github.com/hanyeonhee)|[Hwana(Kyu Hwan, Lee)](https://github.com/KyuHwan00)|[Robin(MinJae Kim)](https://github.com/minjae9610)|[Steve(stevesim)](https://github.com/myungjinsim)|[X(profit0124)](https://github.com/profit0124)|
 
