@@ -9,12 +9,19 @@ import SwiftUI
 
 @main
 struct MomentApp: App {
+    @Environment(\.scenePhase) var scenePhase
+    
     let persistenceController = PersistenceController.shared
-
+    
+    let mapViewModel: MapViewModel = MapViewModel()
+    let coreDataViewModel: CoreDataViewModel = CoreDataViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(mapViewModel)
+                .environmentObject(coreDataViewModel)
+                .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }
 }
