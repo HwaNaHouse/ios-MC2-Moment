@@ -15,7 +15,11 @@ struct PinListView: View {
     @State var title: String = ""
     @State var isOffset:CGFloat = .zero
     
+    
     @EnvironmentObject var sm: StateManage
+    
+    @Binding var selectCategory: Category?
+    @State var selectPin: Pin?
     
     @Binding var effectID: Int
     let namespace: Namespace.ID
@@ -31,7 +35,7 @@ struct PinListView: View {
                     
                     VStack {
                         HStack {
-                            Text("Korea Travel")
+                            Text(selectCategory?.title ?? "UnNamed")
                                 .foregroundColor(.white)
                                 .font(.system(size:22))
                                 .fontWeight(.bold)
@@ -46,7 +50,7 @@ struct PinListView: View {
                         .padding(.top, 5)
                         .opacity(1)
                         HStack {
-                            Text("2020.05.14")
+                            Text(changeDateToString(date: selectCategory?.startDate ?? Date()))
                                 .foregroundColor(.white)
                                 .font(.system(size:14))
                                 .fontWeight(.regular)
@@ -60,16 +64,23 @@ struct PinListView: View {
                     Color.clear.frame(height: 10)
                         .padding(.bottom, 10)
                     //코어데이터로 For문 돌려 카드 컴퍼넌트에 스테이트 바인딩 해주기
-                    ForEach(0..<10) { i in
-                        PinCardView()
-                            .onTapGesture {
-                                sm.isDetailShow.toggle()
+                    if let data = selectCategory {
+                        if let pins = data.pinArray {
+                            ForEach(0..<pins.count, id: \.self) { i in
+                                PinCardView(pin: pins[i])
+                                    .onTapGesture {
+                                        sm.isDetailShow.toggle()
+                                        selectPin = pins[i]
+                                    }
+                                
                             }
+                        }
                         
                     }
+                    
                 }
                 .fullScreenCover(isPresented: $sm.isDetailShow, content: {
-                    PinDetailView()
+                    PinDetailView(selectPin: $selectPin)
                 })
                 .background(GeometryReader {
                     Color.clear.preference(key: ViewOffsetKey.self,
@@ -81,7 +92,7 @@ struct PinListView: View {
                     if $0 > 95 {
                         withAnimation {
                             isTitleToggle = true
-                            title = "KoreaTravel"
+                            title = selectCategory?.title ?? "UnNamed"
                         }
                     } else {
                         withAnimation{
@@ -106,7 +117,7 @@ struct PinListView: View {
         .background {
             ZStack {
                 VStack(spacing: 0) {
-                    Image("1")
+                    Image(selectCategory?.pinArray.randomElement()?.photoArray.randomElement()?.photoName ?? "0")
                         .resizable()
                         .frame(height: 333)
                         .aspectRatio(contentMode: .fit)
@@ -134,5 +145,15 @@ struct PinListView: View {
         
         .edgesIgnoringSafeArea(.all)
 //        .navigationBarHidden(false)
+    }
+    func changeDateToString(date: Date) -> String {
+        var result = ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        result = dateFormatter.string(from: date)
+        
+        return result
     }
 }

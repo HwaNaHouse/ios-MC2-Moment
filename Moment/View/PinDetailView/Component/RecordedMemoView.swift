@@ -12,17 +12,12 @@ import SwiftUI
 struct RecordedMemoView: View {
     
     // 기록 내용
-    let text : String
-    
-    // 테스트용
-    init() {
-        self.text = "이 밤 그날의 반딧불을 당신의 창 가까이 보낼게요 사랑한다는 말이에요 나 우리의 첫 입맞춤을 떠올려 그럼 언제든 눈을 감고 가장 먼 곳으로 가요 난 파도가 머물던 모래 위에 적힌 글씨처럼 그대가 멀리 사라져 버릴 것 같아 늘 그리워, 그리워 여기 내 마음속에 모든 말을 다 꺼내어 줄 순 없지만 사랑한다는 말이에요 어떻게 나에게 그대란 행운이 온 걸까 지금 우리 함께 있다면 아, 얼마나 좋을까요"
-    }
+    @Binding public var selectedPin : Pin?
     
     var body: some View {
         
         // 내용이 없다면 뷰가 안뜸
-        if !text.isEmpty {
+        if let content = selectedPin?.content {
             
             ZStack{
                 
@@ -37,7 +32,7 @@ struct RecordedMemoView: View {
                         .padding(.bottom, 40)
                     
                     // 기록한 내용 표시 구역
-                    Text(text)
+                    Text(content)
                         .lineSpacing(2)
                         .font(Font.system(size: 14))
                         .frame(width: 305, alignment: .center)

@@ -18,12 +18,12 @@ struct ImageScrollView: View {
     @Binding var indexValue : Int
     
     //이미지 파일 경로가 들어가있는 리스트
-    @Binding var imageList : [String]
+    @Binding var imageList : Pin?
     
     var body: some View {
         
         // imageList가 빈값이면 뷰를 안보여줌
-        if !imageList.isEmpty {
+        if let data = imageList {
             //Layout
             VStack(spacing : 0){
             Spacer().frame(height: 22)
@@ -38,12 +38,12 @@ struct ImageScrollView: View {
                 HStack(spacing : 0){
                     Spacer().frame(width: 41.5)
                     //
-                    ForEach(imageList.indices, id : \.self){ i in
+                    ForEach(0..<data.photoArray.count){ i in
                     Button {
                             indexValue = i
                             isActivated.toggle()
                     }label: {
-                        Image(imageList[i])
+                        Image(data.photoArray[i].photoName ?? "0")
                             .resizable()
                             .frame(width: 300, height: 300)
                             .cornerRadius(10)

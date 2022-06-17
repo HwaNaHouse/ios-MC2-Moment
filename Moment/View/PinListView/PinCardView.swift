@@ -16,6 +16,7 @@ struct PinCardView: View {
     @State var deleteButton: Bool = false
     
     @State private var alertShowing = false
+    public var pin: Pin?
 
 // Coredata를 받아오는 작업이 필요함 State
     var body: some View {
@@ -57,7 +58,7 @@ struct PinCardView: View {
                 // 위에 투명도?
                 HStack {
                     //이모티콘
-                    Text("😀")
+                    Text(pin?.emotion ?? "😀")
                         .font(.custom("TossFaceFontMac", size: 28))
                         .background{
                             Circle()
@@ -69,12 +70,12 @@ struct PinCardView: View {
                         .padding(.vertical, 26)
                     VStack (alignment: .leading){
                         // Pin title
-                        Text("첫번째 완료 핀")
+                        Text(pin?.title ?? "NoNamed")
                             .font(.system(size: 18))
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
                         // Pin createAt
-                        Text("2020.05.14")
+                        Text(changeDateToString(date: pin?.createdAt ?? Date()))
                             .font(.system(size: 12))
                             .fontWeight(.regular)
                             .foregroundColor(.black)
@@ -84,7 +85,7 @@ struct PinCardView: View {
                     
                     Spacer()
                     // ImageName
-                    Image("1")
+                    Image(pin?.photoArray.randomElement()?.photoName ?? "0")
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(5)
@@ -129,6 +130,17 @@ struct PinCardView: View {
         .shadow(color: .black.opacity(0.08), radius: 26, y: 12)
 
         
+    }
+    
+    func changeDateToString(date: Date) -> String {
+        var result = ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        result = dateFormatter.string(from: date)
+        
+        return result
     }
 }
 

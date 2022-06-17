@@ -18,6 +18,10 @@ extension Photo {
 
     @NSManaged public var photoName: String?
     @NSManaged public var Pin: Pin?
+    
+    public var unwrappedPhotoName: String {
+        photoName ?? "0"
+    }
 
 }
 

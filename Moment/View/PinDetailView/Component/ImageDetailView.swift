@@ -25,7 +25,10 @@ struct ImageDetailView : View {
         // 클릭된 사진의 id값을 얻기 위해 사용됨.
     @Binding var indexValue  : Int
         // 받아오는 수정 전 이미지 리스트
-    @Binding var originImageList :  [String]
+//    @Binding var originImageList :  [String]
+    
+    @Binding var selectedPin: Pin?
+    
     
     //State
         // 수정 후 이미지 리스트
@@ -141,11 +144,16 @@ struct ImageDetailView : View {
             tapGesture.toggle()
         }
         .onAppear{
-            for originImage in originImageList{
-                changedImagesList.append(Images(imagePath: originImage))
-            }
-    
-            currentPost = changedImagesList[indexValue].id
+            if let data = selectedPin {
+                
+                    for i in data.photoArray {
+                        changedImagesList.append(Images(imagePath: i.photoName ?? "0"))
+                    }
+                    currentPost = changedImagesList[indexValue].id
+                
+                }
+                
+            
             
         }.background(
             .black)

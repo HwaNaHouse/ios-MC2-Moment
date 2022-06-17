@@ -11,14 +11,18 @@ struct CategoryListView: View {
     
     @EnvironmentObject var sm: StateManage
 //    @EnvironmentObject var vm: CoreDataRealationshipViewModel
+    @Environment(\.managedObjectContext) private var viewContext
     
-    
+    @EnvironmentObject var cVM: CoreDataViewModel
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
     
     @Namespace private var namespace
     
     @State var detailShow: Bool = false
     @State var effectID = 0
     @State var categoryAddToggle: Bool = false
+    @State var selectCategory: Category?
     
     @Binding var sheetModeValue: String
     let high: CGFloat = UIScreen.main.bounds.height
@@ -27,7 +31,7 @@ struct CategoryListView: View {
     var body: some View {
         //카테고리 선택 여부 판단하여 Page 전환을 일으키는 로직
         if sm.isPinListShow {
-            PinListView(effectID: $effectID, namespace: namespace)
+            PinListView(selectCategory: $selectCategory, effectID: $effectID, namespace: namespace)
                 .navigationBarHidden(true)
         } else {
 //            NavigationView {
@@ -38,12 +42,12 @@ struct CategoryListView: View {
                     
                         
                         //코어데이터로 바꿔줘야 함
-                        ForEach(0..<10, id: \.self) { i in
+                        ForEach(0..<categories.count, id: \.self) { i in
                             Button (action: {
                                 withAnimation{
                                     effectID = i
                                     sm.isPinListShow = true
-                                    
+                                    selectCategory = categories[i]
                                 }
                             }, label: {
                                 categoryCard(idx: i)
@@ -71,11 +75,16 @@ struct CategoryListView: View {
                     VStack {
                         //명진님에 여행
                         HStack {
-                            Text("명진님의 여행")
+                            Text("나의 Moment")
                                 .font(.system(size: 24))
                                 .fontWeight(.bold)
                             Spacer()
                             //카테고리 추가 역할
+                            Button(action: {
+//                                addPhoto()
+                            }, label: {
+                                Text("plus")
+                            })
                             NavigationLink(destination: CategoryAddView(isShowCategorySheet: $categoryAddToggle)) {
                                 Image(systemName: "plus")
                                     .font(.system(size: 20, weight: .regular))
@@ -116,7 +125,7 @@ struct CategoryListView: View {
 //        let category: Category = category
         
         ZStack {
-            Image("\(idx)")
+            Image((categories[idx].pinArray.randomElement()?.photoArray.randomElement()?.photoName ?? "0"))
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 120, alignment: .center)
@@ -136,18 +145,18 @@ struct CategoryListView: View {
             
             VStack(alignment: .leading) {
                 HStack (spacing: 1){
-                    Text("category.title ?? ")
+                    Text(categories[idx].title ?? "UnNamed")
                         .foregroundColor(.white)
                         .font(.system(size: 24))
                         .fontWeight(.bold)
                     
                     Circle()
                         .frame(width: 6.0, height: 6.0)
-                        .foregroundColor(.mint)
+                        .foregroundColor(Color(categories[idx].categoryColor ?? "default"))
                         .offset(y: 5)
                     Spacer()
                 }
-                Text(changeDateToString(date: Date()))
+                Text(changeDateToString(date: categories[idx].startDate ?? Date()))
                     .foregroundColor(.white)
                     .font(.system(size: 11.22))
                     .fontWeight(.medium)
@@ -167,6 +176,181 @@ struct CategoryListView: View {
         result = dateFormatter.string(from: date)
         
         return result
+    }
+    
+    
+    
+    private func addCategory() {
+        let categoryTitles = [
+            "제주도 여행",
+            "포항 여행",
+            "부산 여행",
+            "서울 여행",
+            "해외 여행",
+            "피카츄",
+            "라이츄",
+            "파이리",
+            "꼬부기",
+            "버터풀",
+            "야도란",
+            "피죤투",
+            "또가스",
+            "서로생긴모습은 달라도",
+            "우리는 모두 친구"
+        ]
+        let colorLists = [
+            "blue",
+            "brown",
+            "default",
+            "green",
+            "mint",
+            "orange",
+            "pink",
+            "purple",
+            "red",
+            "redpink",
+            "yellow",
+            "firstColor",
+            "secondColor",
+            "thirdColor",
+            "fourthColor"
+        ]
+        for i in 0..<categoryTitles.count {
+            let newCategory = Category(context: viewContext)
+            newCategory.title = categoryTitles[i]
+            newCategory.categoryColor = colorLists[i]
+            newCategory.startDate = Date()
+            newCategory.endDate = Date()
+            
+            PersistenceController.shared.saveContext()
+        }
+        
+            
+          
+        
+    }
+    
+    private func addPin() {
+        let pinTitles = [
+            "제주도 여행",
+            "포항 여행",
+            "부산 여행",
+            "서울 여행",
+            "해외 여행",
+            "피카츄",
+            "라이츄",
+            "파이리",
+            "꼬부기",
+            "버터풀",
+            "야도란",
+            "피죤투",
+            "또가스",
+            "서로생긴모습은 달라도",
+            "우리는 모두 친구"
+        ]
+        let pinEmotions = [
+            "😀",
+            "😇",
+            "🥰",
+            "🤨",
+            "😎",
+            "🥸",
+            "☹️",
+            "🥳",
+            "🥺",
+            "😑",
+            "😪",
+            "🤑",
+            "🥵",
+            "🫠",
+            "😷"
+        ]
+        let pinLongitude = [
+            126.941291,
+            126.529304,
+            126.772310,
+            129.159784,
+            130.123456,
+            131.111111,
+            130.213334,
+            130.178921,
+            131.123456,
+            132.111111,
+            132.222222,
+            132.121212,
+            131.123123,
+            132.123123,
+            130.982134
+        ]
+        let pinLatitude = [
+            33.458327,
+            33.361354,
+            33.512345,
+            35.158376,
+            34.123456,
+            34.111111,
+            34.121212,
+            36.121321,
+            36.123123,
+            35.123123,
+            34.111111,
+            36.999991,
+            37.123123,
+            33.999999,
+            36.828342
+            
+        ]
+        let pinContent = [
+            "제주도 여행",
+            "포항 여행",
+            "부산 여행",
+            "서울 여행",
+            "해외 여행",
+            "피카츄",
+            "라이츄",
+            "파이리",
+            "꼬부기",
+            "버터풀",
+            "야도란",
+            "피죤투",
+            "또가스",
+            "서로생긴모습은 달라도",
+            "우리는 모두 친구"
+        ]
+        for j in 0..<pinTitles.count {
+            for i in 0..<pinTitles.count {
+                let newPin = Pin(context: viewContext)
+                    newPin.title = pinTitles[i]
+                    newPin.emotion = pinEmotions[i]
+                    newPin.createdAt = Date()
+                    newPin.latitude = pinLatitude[i]
+                    newPin.longtitude = pinLongitude[i]
+                    newPin.content = pinContent[i]
+                    
+                    categories[j].addToPin(newPin)
+                    PersistenceController.shared.saveContext()
+            }
+        }
+        
+    }
+    
+    private func addPhoto() {
+        let photoList = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+        
+        for i in 0..<15 {
+            let pins = categories[i].pinArray
+            for j in 0..<15 {
+                for _ in 0..<6{
+                    let newPhoto = Photo(context: viewContext)
+                    newPhoto.photoName = photoList.randomElement()
+                    
+                    
+                    newPhoto.Pin = pins[j]
+                    PersistenceController.shared.saveContext()
+                }
+                
+            }
+        }
     }
 }
 

@@ -11,17 +11,11 @@ import SwiftUI
 struct TitleImageView: View {
     
     //필요한 변수들
-    
+    @Binding public var selectedpin : Pin?
     //대표사진 파일의 경로
-    let sampleImage : String
-    
-    // 핀의 제목
-    let pinTitle : String
-    // 날짜
-    let sampleDate : Date
-    
+
     // 대표사진 그라디언트
-    private var linearGradinet = LinearGradient(gradient: Gradient(colors: [.black.opacity(0), .black.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
+    let linearGradinet = LinearGradient(gradient: Gradient(colors: [.black.opacity(0), .black.opacity(0.3)]), startPoint: .top, endPoint: .bottom)
     // 날짜 변환기
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -30,19 +24,13 @@ struct TitleImageView: View {
     }
     
     //테스트용
-    init(){
-        self.sampleImage = "1"
-        self.pinTitle = "전통시장"
-        self.sampleDate = .now
-    }
-    
     var body: some View {
             
             VStack(spacing : 0){
                 
                 Spacer()
                 // 핀 제목
-                Text(pinTitle)
+                Text(selectedpin?.title ?? "NoNamed")
                     .foregroundColor(.white).bold().font(Font.system(size: 28))
                 
                 // 명진이의 소원
@@ -51,7 +39,7 @@ struct TitleImageView: View {
                     .foregroundColor(Color("default"))
                     .padding(.bottom, 8).padding(.top, 7)
                 // 핀 날짜
-                Text("\(sampleDate, formatter: dateFormatter)")
+                Text("\(selectedpin?.createdAt ??  Date(), formatter: dateFormatter)")
                     .fontWeight(.regular)
                     .foregroundColor(.white)
                     .font(.custom("Helvetica Neue", size: 18))
@@ -59,7 +47,7 @@ struct TitleImageView: View {
                 
         }
         .frame(height: 520)
-        .background(Image(sampleImage)
+        .background(Image(selectedpin?.photoArray.randomElement()?.photoName ?? "0")
                 .resizable()
                 .scaledToFill()
                 .overlay(linearGradinet)

@@ -23,7 +23,7 @@ extension Pin {
     @NSManaged public var longtitude: Double
     @NSManaged public var title: String?
     @NSManaged public var category: Category?
-    @NSManaged public var photo: NSSet?
+    @NSManaged public var photos: NSSet?
 
     public var unwrappedEmotion: String {
         emotion ?? "Unknown emotion"
@@ -34,10 +34,12 @@ extension Pin {
     public var unwrappedContents: String {
         content ?? "Unknown Contents"
     }
-    public var photoArray: Set<Photo> {
-        let photoSet = photo as? Set<Photo> ?? []
+    public var photoArray: [Photo] {
+        let photoSet = photos as? Set<Photo> ?? []
         
-        return photoSet
+        return photoSet.sorted {
+            $0.unwrappedPhotoName < $1.unwrappedPhotoName
+        }
     }
 }
 
