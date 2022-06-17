@@ -37,7 +37,7 @@ struct MapView: View {
                 showsUserLocation: true,
                 annotationItems: category.pinArray) { pin in
                 MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longtitude)) {
-                    PinView(pin: pin, currentPin: $currentPin, color: category.unwrappedColor, offset: $offset, isRemove: $isRemove)
+                    PinView(pin: pin, currentPin: $currentPin, color: category.unwrappedCategoryColor, offset: $offset, isRemove: $isRemove)
                 }
             }
                 .onTapGesture {
@@ -55,7 +55,7 @@ struct MapView: View {
             if pinMode {
                 if isActive {
                     Circle()
-                        .fill(Color("\(category.unwrappedColor)"))
+                        .fill(Color("\(category.unwrappedCategoryColor)"))
                         .frame(width: 30, height: 30)
                 } else {
                     if currentPin == Optional(nil) {
@@ -74,8 +74,8 @@ struct MapView_Previews: PreviewProvider {
         newCategory.title = "Apple"
         
         let pin1 = Pin(context: viewContext)
-        pin1.placeName = "Jeju"
-        pin1.date = Date()
+        pin1.title = "Jeju"
+        pin1.createdAt = Date()
         pin1.latitude = 123.0012
         pin1.longtitude = 34.234
         

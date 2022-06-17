@@ -19,7 +19,7 @@ struct MainView: View {
     @EnvironmentObject var viewModel: MapViewModel
     @EnvironmentObject var cVM: CoreDataViewModel
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.date, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
     
     @State private var newPin: Pin?
     @State private var currentPin: Pin?
@@ -148,7 +148,6 @@ struct MainView: View {
                                 .opacity(pinMode ? 1 : 0)
                             }
                         }
-                        
                         Spacer().frame(height: UIScreen.main.bounds.height / 9.3)
                     }
                     
@@ -178,6 +177,8 @@ struct MainView: View {
                 }
                 
                 TotalTripView() //sheet view
+//                OpeningView()
+                
             }
             .navigationBarHidden(true)
         }
@@ -200,7 +201,7 @@ struct MakeCategoryView: View {
     @EnvironmentObject var viewModel: MapViewModel
     @Environment(\.managedObjectContext) var viewContext
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.date, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
     
     @State private var title: String = ""
     @Binding var selection: Int
@@ -289,8 +290,8 @@ struct MakeCategoryView: View {
         withAnimation {
             let newCategory = Category(context: viewContext)
             newCategory.title = title
-            newCategory.color = selectedColor
-            newCategory.date = Date()
+            newCategory.categoryColor = selectedColor
+            newCategory.startDate = Date()
             
             PersistenceController.shared.saveContext()
         }

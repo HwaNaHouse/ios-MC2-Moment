@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */; };
+		31117BD8285B3DE50072C3B9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */; };
+		31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD9285B3E0E0072C3B9 /* StateManager.swift */; };
+		31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */; };
+		31117BDE285B423D0072C3B9 /* CategoryListVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BDD285B423D0072C3B9 /* CategoryListVew.swift */; };
+		31117BE0285B425E0072C3B9 /* PinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BDF285B425E0072C3B9 /* PinListView.swift */; };
+		31117BE2285B42640072C3B9 /* PinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE1285B42640072C3B9 /* PinCardView.swift */; };
+		31117BE4285B426D0072C3B9 /* PinNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE3285B426D0072C3B9 /* PinNavbar.swift */; };
+		31117BE6285B4B4F0072C3B9 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE5285B4B4F0072C3B9 /* OpeningView.swift */; };
+		31117BE8285B64ED0072C3B9 /* CategoryAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */; };
 		96419B4A285B1A7700A25704 /* Moment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96419B48285B1A7700A25704 /* Moment.xcdatamodeld */; };
 		96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4B285B1AD300A25704 /* Category+CoreDataClass.swift */; };
 		96419B52285B1AD300A25704 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4C285B1AD300A25704 /* Category+CoreDataProperties.swift */; };
@@ -58,6 +68,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOffsetKey.swift; sourceTree = "<group>"; };
+		31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		31117BD9285B3E0E0072C3B9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRealationshipViewModel.swift; sourceTree = "<group>"; };
+		31117BDD285B423D0072C3B9 /* CategoryListVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListVew.swift; sourceTree = "<group>"; };
+		31117BDF285B425E0072C3B9 /* PinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinListView.swift; sourceTree = "<group>"; };
+		31117BE1285B42640072C3B9 /* PinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCardView.swift; sourceTree = "<group>"; };
+		31117BE3285B426D0072C3B9 /* PinNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinNavbar.swift; sourceTree = "<group>"; };
+		31117BE5285B4B4F0072C3B9 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAddView.swift; sourceTree = "<group>"; };
 		96419B49285B1A7700A25704 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		96419B4B285B1AD300A25704 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "Moment/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		96419B4C285B1AD300A25704 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Moment/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -119,11 +139,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31117BD4285B39010072C3B9 /* PinListView */ = {
+			isa = PBXGroup;
+			children = (
+				31117BDF285B425E0072C3B9 /* PinListView.swift */,
+				31117BE1285B42640072C3B9 /* PinCardView.swift */,
+				31117BE3285B426D0072C3B9 /* PinNavbar.swift */,
+			);
+			path = PinListView;
+			sourceTree = "<group>";
+		};
 		96419B64285B1C8000A25704 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				96419B66285B1C8000A25704 /* MapViewModel.swift */,
 				96419B65285B1C8000A25704 /* CoreDateViewModel.swift */,
+				31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */,
+				31117BD9285B3E0E0072C3B9 /* StateManager.swift */,
+				31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -133,6 +166,7 @@
 			children = (
 				96419B9D285B26B500A25704 /* MapView */,
 				96419BA0285B284D00A25704 /* CategoryListView */,
+				31117BD4285B39010072C3B9 /* PinListView */,
 				96419BA1285B2FC000A25704 /* PinDetailView */,
 				96419B9B285B239100A25704 /* PinDetailAddView */,
 			);
@@ -144,6 +178,7 @@
 			children = (
 				96419B67285B1C8000A25704 /* Persistence.swift */,
 				96419B48285B1A7700A25704 /* Moment.xcdatamodeld */,
+				31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				96419B69285B1C8100A25704 /* TotalTripView.swift */,
+				31117BDD285B423D0072C3B9 /* CategoryListVew.swift */,
+				31117BE5285B4B4F0072C3B9 /* OpeningView.swift */,
+				31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */,
 			);
 			path = CategoryListView;
 			sourceTree = "<group>";
@@ -420,25 +458,35 @@
 				96419B8A285B1C8100A25704 /* PinView.swift in Sources */,
 				96419B52285B1AD300A25704 /* Category+CoreDataProperties.swift in Sources */,
 				96419B54285B1AD300A25704 /* Pin+CoreDataProperties.swift in Sources */,
+				31117BD8285B3DE50072C3B9 /* CoreDataManager.swift in Sources */,
 				96419B88285B1C8100A25704 /* EmoPicker.swift in Sources */,
+				31117BE2285B42640072C3B9 /* PinCardView.swift in Sources */,
 				96419B8F285B1C8100A25704 /* MenuView.swift in Sources */,
 				96419B90285B1C8100A25704 /* DelayView.swift in Sources */,
+				31117BDE285B423D0072C3B9 /* CategoryListVew.swift in Sources */,
 				96419B86285B1C8100A25704 /* WritingView.swift in Sources */,
 				96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */,
 				C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */,
+				31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */,
 				96419B89285B1C8100A25704 /* LoopingPinView.swift in Sources */,
 				96419B80285B1C8100A25704 /* CoreDateViewModel.swift in Sources */,
 				96419B84285B1C8100A25704 /* MapView.swift in Sources */,
 				C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */,
+				31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */,
 				96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */,
+				31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */,
 				96419B91285B1C8100A25704 /* PinPageView.swift in Sources */,
 				96419B82285B1C8100A25704 /* Persistence.swift in Sources */,
 				96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */,
 				96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */,
+				31117BE6285B4B4F0072C3B9 /* OpeningView.swift in Sources */,
+				31117BE0285B425E0072C3B9 /* PinListView.swift in Sources */,
 				96419B4A285B1A7700A25704 /* Moment.xcdatamodeld in Sources */,
 				96419B8B285B1C8100A25704 /* EditMapView.swift in Sources */,
+				31117BE8285B64ED0072C3B9 /* CategoryAddView.swift in Sources */,
 				C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */,
 				96419B81285B1C8100A25704 /* MapViewModel.swift in Sources */,
+				31117BE4285B426D0072C3B9 /* PinNavbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
