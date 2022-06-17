@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CDC8CA1285C5C5A008E587A /* PinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C9A285C5C5A008E587A /* PinDetailView.swift */; };
+		0CDC8CA2285C5C5A008E587A /* RecordedMemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C9C285C5C5A008E587A /* RecordedMemoView.swift */; };
+		0CDC8CA3285C5C5A008E587A /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C9D285C5C5A008E587A /* ImageScrollView.swift */; };
+		0CDC8CA4285C5C5A008E587A /* ImageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C9E285C5C5A008E587A /* ImageDetailView.swift */; };
+		0CDC8CA5285C5C5A008E587A /* TitleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8C9F285C5C5A008E587A /* TitleImageView.swift */; };
+		0CDC8CA6285C5C5A008E587A /* SmallMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDC8CA0285C5C5A008E587A /* SmallMapView.swift */; };
 		31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */; };
 		31117BD8285B3DE50072C3B9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */; };
 		31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD9285B3E0E0072C3B9 /* StateManager.swift */; };
@@ -68,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CDC8C9A285C5C5A008E587A /* PinDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailView.swift; sourceTree = "<group>"; };
+		0CDC8C9C285C5C5A008E587A /* RecordedMemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedMemoView.swift; sourceTree = "<group>"; };
+		0CDC8C9D285C5C5A008E587A /* ImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		0CDC8C9E285C5C5A008E587A /* ImageDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailView.swift; sourceTree = "<group>"; };
+		0CDC8C9F285C5C5A008E587A /* TitleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleImageView.swift; sourceTree = "<group>"; };
+		0CDC8CA0285C5C5A008E587A /* SmallMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallMapView.swift; sourceTree = "<group>"; };
 		31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOffsetKey.swift; sourceTree = "<group>"; };
 		31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		31117BD9285B3E0E0072C3B9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
@@ -139,6 +151,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CDC8C99285C5C5A008E587A /* PinDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				0CDC8C9A285C5C5A008E587A /* PinDetailView.swift */,
+				0CDC8C9B285C5C5A008E587A /* Component */,
+			);
+			path = PinDetailView;
+			sourceTree = "<group>";
+		};
+		0CDC8C9B285C5C5A008E587A /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				0CDC8C9F285C5C5A008E587A /* TitleImageView.swift */,
+				0CDC8C9C285C5C5A008E587A /* RecordedMemoView.swift */,
+				0CDC8C9D285C5C5A008E587A /* ImageScrollView.swift */,
+				0CDC8C9E285C5C5A008E587A /* ImageDetailView.swift */,
+				0CDC8CA0285C5C5A008E587A /* SmallMapView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		31117BD4285B39010072C3B9 /* PinListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +200,7 @@
 				96419B9D285B26B500A25704 /* MapView */,
 				96419BA0285B284D00A25704 /* CategoryListView */,
 				31117BD4285B39010072C3B9 /* PinListView */,
-				96419BA1285B2FC000A25704 /* PinDetailView */,
+				0CDC8C99285C5C5A008E587A /* PinDetailView */,
 				96419B9B285B239100A25704 /* PinDetailAddView */,
 			);
 			path = View;
@@ -241,13 +274,6 @@
 				31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */,
 			);
 			path = CategoryListView;
-			sourceTree = "<group>";
-		};
-		96419BA1285B2FC000A25704 /* PinDetailView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PinDetailView;
 			sourceTree = "<group>";
 		};
 		C1F48C4728537E1E00CA8600 = {
@@ -472,16 +498,22 @@
 				96419B80285B1C8100A25704 /* CoreDateViewModel.swift in Sources */,
 				96419B84285B1C8100A25704 /* MapView.swift in Sources */,
 				C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */,
+				0CDC8CA6285C5C5A008E587A /* SmallMapView.swift in Sources */,
 				31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */,
+				0CDC8CA5285C5C5A008E587A /* TitleImageView.swift in Sources */,
 				96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */,
 				31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */,
 				96419B91285B1C8100A25704 /* PinPageView.swift in Sources */,
+				0CDC8CA2285C5C5A008E587A /* RecordedMemoView.swift in Sources */,
 				96419B82285B1C8100A25704 /* Persistence.swift in Sources */,
 				96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */,
 				96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */,
+				0CDC8CA4285C5C5A008E587A /* ImageDetailView.swift in Sources */,
+				0CDC8CA1285C5C5A008E587A /* PinDetailView.swift in Sources */,
 				31117BE6285B4B4F0072C3B9 /* OpeningView.swift in Sources */,
 				31117BE0285B425E0072C3B9 /* PinListView.swift in Sources */,
 				96419B4A285B1A7700A25704 /* Moment.xcdatamodeld in Sources */,
+				0CDC8CA3285C5C5A008E587A /* ImageScrollView.swift in Sources */,
 				96419B8B285B1C8100A25704 /* EditMapView.swift in Sources */,
 				31117BE8285B64ED0072C3B9 /* CategoryAddView.swift in Sources */,
 				C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */,
