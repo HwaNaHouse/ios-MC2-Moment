@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C19F0E132856855100EDC807 /* PinDetailAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E122856855100EDC807 /* PinDetailAddView.swift */; };
-		C19F0E1528568C5000EDC807 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1428568C5000EDC807 /* ButtonStyles.swift */; };
-		C19F0E1728568FA300EDC807 /* PinImageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1628568FA300EDC807 /* PinImageAddView.swift */; };
-		C19F0E192856939900EDC807 /* AddDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E182856939900EDC807 /* AddDetailTest.swift */; };
-		C19F0E1B2856968100EDC807 /* PinContentAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1A2856968100EDC807 /* PinContentAddView.swift */; };
-		C19F0E1D28569D6500EDC807 /* RootPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1C28569D6500EDC807 /* RootPresentationModeExtension.swift */; };
-		C19F0E1F2856E01F00EDC807 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1E2856E01F00EDC807 /* ImagePicker.swift */; };
 		31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */; };
 		31117BD8285B3DE50072C3B9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */; };
 		31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD9285B3E0E0072C3B9 /* StateManager.swift */; };
@@ -75,13 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C19F0E122856855100EDC807 /* PinDetailAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDetailAddView.swift; sourceTree = "<group>"; };
-		C19F0E1428568C5000EDC807 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
-		C19F0E1628568FA300EDC807 /* PinImageAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinImageAddView.swift; sourceTree = "<group>"; };
-		C19F0E182856939900EDC807 /* AddDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDetailTest.swift; sourceTree = "<group>"; };
-		C19F0E1A2856968100EDC807 /* PinContentAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinContentAddView.swift; sourceTree = "<group>"; };
-		C19F0E1C28569D6500EDC807 /* RootPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeExtension.swift; sourceTree = "<group>"; };
-		C19F0E1E2856E01F00EDC807 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOffsetKey.swift; sourceTree = "<group>"; };
 		31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		31117BD9285B3E0E0072C3B9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
@@ -153,12 +139,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C169FE65285C5A6200401EA8 /* PinDetailAddView */ = {
-			isa = PBXGroup;
-			children = (
-				C19F0E122856855100EDC807 /* PinDetailAddView.swift */,
-				C19F0E1628568FA300EDC807 /* PinImageAddView.swift */,
-				C19F0E1A2856968100EDC807 /* PinContentAddView.swift */,
 		31117BD4285B39010072C3B9 /* PinListView */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,14 +281,6 @@
 			children = (
 				C1F48C5328537E1E00CA8600 /* MomentApp.swift */,
 				C1F48C5528537E1E00CA8600 /* ContentView.swift */,
-				C19F0E182856939900EDC807 /* AddDetailTest.swift */,
-				C169FE65285C5A6200401EA8 /* PinDetailAddView */,
-				C19F0E1E2856E01F00EDC807 /* ImagePicker.swift */,
-				C19F0E1428568C5000EDC807 /* ButtonStyles.swift */,
-				C19F0E1C28569D6500EDC807 /* RootPresentationModeExtension.swift */,
-				C1F48C5728537E1E00CA8600 /* Assets.xcassets */,
-				C1F48C5C28537E1E00CA8600 /* Persistence.swift */,
-				C1F48C5E28537E1E00CA8600 /* Moment.xcdatamodeld */,
 				96419B68285B1C8100A25704 /* View */,
 				96419B64285B1C8000A25704 /* ViewModel */,
 				96419B96285B1D4C00A25704 /* Model */,
@@ -495,13 +467,6 @@
 				96419B86285B1C8100A25704 /* WritingView.swift in Sources */,
 				96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */,
 				C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */,
-				C19F0E1D28569D6500EDC807 /* RootPresentationModeExtension.swift in Sources */,
-				C19F0E192856939900EDC807 /* AddDetailTest.swift in Sources */,
-				C19F0E1B2856968100EDC807 /* PinContentAddView.swift in Sources */,
-				C19F0E1528568C5000EDC807 /* ButtonStyles.swift in Sources */,
-				C19F0E1F2856E01F00EDC807 /* ImagePicker.swift in Sources */,
-				C19F0E1728568FA300EDC807 /* PinImageAddView.swift in Sources */,
-				C19F0E132856855100EDC807 /* PinDetailAddView.swift in Sources */,
 				31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */,
 				96419B89285B1C8100A25704 /* LoopingPinView.swift in Sources */,
 				96419B80285B1C8100A25704 /* CoreDateViewModel.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
@@ -31,6 +32,10 @@ struct ContentView: View {
             }
             OpeningView()
         }
+        
+           
+        
+        
     }
 }
 
