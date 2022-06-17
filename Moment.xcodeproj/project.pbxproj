@@ -14,12 +14,44 @@
 		C19F0E1B2856968100EDC807 /* PinContentAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1A2856968100EDC807 /* PinContentAddView.swift */; };
 		C19F0E1D28569D6500EDC807 /* RootPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1C28569D6500EDC807 /* RootPresentationModeExtension.swift */; };
 		C19F0E1F2856E01F00EDC807 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E1E2856E01F00EDC807 /* ImagePicker.swift */; };
+		31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */; };
+		31117BD8285B3DE50072C3B9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */; };
+		31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BD9285B3E0E0072C3B9 /* StateManager.swift */; };
+		31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */; };
+		31117BDE285B423D0072C3B9 /* CategoryListVew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BDD285B423D0072C3B9 /* CategoryListVew.swift */; };
+		31117BE0285B425E0072C3B9 /* PinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BDF285B425E0072C3B9 /* PinListView.swift */; };
+		31117BE2285B42640072C3B9 /* PinCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE1285B42640072C3B9 /* PinCardView.swift */; };
+		31117BE4285B426D0072C3B9 /* PinNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE3285B426D0072C3B9 /* PinNavbar.swift */; };
+		31117BE6285B4B4F0072C3B9 /* OpeningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE5285B4B4F0072C3B9 /* OpeningView.swift */; };
+		31117BE8285B64ED0072C3B9 /* CategoryAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */; };
+		96419B4A285B1A7700A25704 /* Moment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96419B48285B1A7700A25704 /* Moment.xcdatamodeld */; };
+		96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4B285B1AD300A25704 /* Category+CoreDataClass.swift */; };
+		96419B52285B1AD300A25704 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4C285B1AD300A25704 /* Category+CoreDataProperties.swift */; };
+		96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4D285B1AD300A25704 /* Pin+CoreDataClass.swift */; };
+		96419B54285B1AD300A25704 /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4E285B1AD300A25704 /* Pin+CoreDataProperties.swift */; };
+		96419B55285B1AD300A25704 /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B4F285B1AD300A25704 /* Photo+CoreDataClass.swift */; };
+		96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B50285B1AD300A25704 /* Photo+CoreDataProperties.swift */; };
+		96419B80285B1C8100A25704 /* CoreDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B65285B1C8000A25704 /* CoreDateViewModel.swift */; };
+		96419B81285B1C8100A25704 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B66285B1C8000A25704 /* MapViewModel.swift */; };
+		96419B82285B1C8100A25704 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B67285B1C8000A25704 /* Persistence.swift */; };
+		96419B83285B1C8100A25704 /* TotalTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B69285B1C8100A25704 /* TotalTripView.swift */; };
+		96419B84285B1C8100A25704 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6A285B1C8100A25704 /* MapView.swift */; };
+		96419B86285B1C8100A25704 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6C285B1C8100A25704 /* WritingView.swift */; };
+		96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6E285B1C8100A25704 /* PinDrawStyle.swift */; };
+		96419B88285B1C8100A25704 /* EmoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6F285B1C8100A25704 /* EmoPicker.swift */; };
+		96419B89285B1C8100A25704 /* LoopingPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B70285B1C8100A25704 /* LoopingPinView.swift */; };
+		96419B8A285B1C8100A25704 /* PinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B71285B1C8100A25704 /* PinView.swift */; };
+		96419B8B285B1C8100A25704 /* EditMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B72285B1C8100A25704 /* EditMapView.swift */; };
+		96419B8D285B1C8100A25704 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B74285B1C8100A25704 /* MainView.swift */; };
+		96419B8F285B1C8100A25704 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B76285B1C8100A25704 /* MenuView.swift */; };
+		96419B90285B1C8100A25704 /* DelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B77285B1C8100A25704 /* DelayView.swift */; };
+		96419B91285B1C8100A25704 /* PinPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B78285B1C8100A25704 /* PinPageView.swift */; };
+		96419B94285B1C8100A25704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96419B7D285B1C8100A25704 /* Assets.xcassets */; };
+		96419B9A285B1DDC00A25704 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 96419B99285B1DDC00A25704 /* SwiftUIPager */; };
+		C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E092856271100EDC807 /* UIImageFileManager.swift */; };
 		C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5328537E1E00CA8600 /* MomentApp.swift */; };
 		C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5528537E1E00CA8600 /* ContentView.swift */; };
-		C1F48C5828537E1E00CA8600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F48C5728537E1E00CA8600 /* Assets.xcassets */; };
 		C1F48C5B28537E1E00CA8600 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1F48C5A28537E1E00CA8600 /* Preview Assets.xcassets */; };
-		C1F48C5D28537E1E00CA8600 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5C28537E1E00CA8600 /* Persistence.swift */; };
-		C1F48C6028537E1E00CA8600 /* Moment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5E28537E1E00CA8600 /* Moment.xcdatamodeld */; };
 		C1F48C6A28537E1F00CA8600 /* MomentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C6928537E1F00CA8600 /* MomentTests.swift */; };
 		C1F48C7428537E1F00CA8600 /* MomentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C7328537E1F00CA8600 /* MomentUITests.swift */; };
 		C1F48C7628537E1F00CA8600 /* MomentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C7528537E1F00CA8600 /* MomentUITestsLaunchTests.swift */; };
@@ -50,13 +82,44 @@
 		C19F0E1A2856968100EDC807 /* PinContentAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinContentAddView.swift; sourceTree = "<group>"; };
 		C19F0E1C28569D6500EDC807 /* RootPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeExtension.swift; sourceTree = "<group>"; };
 		C19F0E1E2856E01F00EDC807 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewOffsetKey.swift; sourceTree = "<group>"; };
+		31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		31117BD9285B3E0E0072C3B9 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRealationshipViewModel.swift; sourceTree = "<group>"; };
+		31117BDD285B423D0072C3B9 /* CategoryListVew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListVew.swift; sourceTree = "<group>"; };
+		31117BDF285B425E0072C3B9 /* PinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinListView.swift; sourceTree = "<group>"; };
+		31117BE1285B42640072C3B9 /* PinCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCardView.swift; sourceTree = "<group>"; };
+		31117BE3285B426D0072C3B9 /* PinNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinNavbar.swift; sourceTree = "<group>"; };
+		31117BE5285B4B4F0072C3B9 /* OpeningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningView.swift; sourceTree = "<group>"; };
+		31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAddView.swift; sourceTree = "<group>"; };
+		96419B49285B1A7700A25704 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		96419B4B285B1AD300A25704 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "Moment/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96419B4C285B1AD300A25704 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "Moment/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		96419B4D285B1AD300A25704 /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataClass.swift"; path = "Moment/Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96419B4E285B1AD300A25704 /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pin+CoreDataProperties.swift"; path = "Moment/Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		96419B4F285B1AD300A25704 /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataClass.swift"; path = "Moment/Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96419B50285B1AD300A25704 /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Photo+CoreDataProperties.swift"; path = "Moment/Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		96419B65285B1C8000A25704 /* CoreDateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDateViewModel.swift; sourceTree = "<group>"; };
+		96419B66285B1C8000A25704 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		96419B67285B1C8000A25704 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		96419B69285B1C8100A25704 /* TotalTripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalTripView.swift; sourceTree = "<group>"; };
+		96419B6A285B1C8100A25704 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		96419B6C285B1C8100A25704 /* WritingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
+		96419B6E285B1C8100A25704 /* PinDrawStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDrawStyle.swift; sourceTree = "<group>"; };
+		96419B6F285B1C8100A25704 /* EmoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoPicker.swift; sourceTree = "<group>"; };
+		96419B70285B1C8100A25704 /* LoopingPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopingPinView.swift; sourceTree = "<group>"; };
+		96419B71285B1C8100A25704 /* PinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinView.swift; sourceTree = "<group>"; };
+		96419B72285B1C8100A25704 /* EditMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditMapView.swift; sourceTree = "<group>"; };
+		96419B74285B1C8100A25704 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		96419B76285B1C8100A25704 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		96419B77285B1C8100A25704 /* DelayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
+		96419B78285B1C8100A25704 /* PinPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPageView.swift; sourceTree = "<group>"; };
+		96419B7D285B1C8100A25704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C19F0E092856271100EDC807 /* UIImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFileManager.swift; sourceTree = "<group>"; };
 		C1F48C5028537E1E00CA8600 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F48C5328537E1E00CA8600 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
 		C1F48C5528537E1E00CA8600 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C1F48C5728537E1E00CA8600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1F48C5A28537E1E00CA8600 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C1F48C5C28537E1E00CA8600 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		C1F48C5F28537E1E00CA8600 /* Moment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moment.xcdatamodel; sourceTree = "<group>"; };
 		C1F48C6528537E1F00CA8600 /* MomentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F48C6928537E1F00CA8600 /* MomentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentTests.swift; sourceTree = "<group>"; };
 		C1F48C6F28537E1F00CA8600 /* MomentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96419B9A285B1DDC00A25704 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,13 +159,126 @@
 				C19F0E122856855100EDC807 /* PinDetailAddView.swift */,
 				C19F0E1628568FA300EDC807 /* PinImageAddView.swift */,
 				C19F0E1A2856968100EDC807 /* PinContentAddView.swift */,
+		31117BD4285B39010072C3B9 /* PinListView */ = {
+			isa = PBXGroup;
+			children = (
+				31117BDF285B425E0072C3B9 /* PinListView.swift */,
+				31117BE1285B42640072C3B9 /* PinCardView.swift */,
+				31117BE3285B426D0072C3B9 /* PinNavbar.swift */,
+			);
+			path = PinListView;
+			sourceTree = "<group>";
+		};
+		96419B64285B1C8000A25704 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				96419B66285B1C8000A25704 /* MapViewModel.swift */,
+				96419B65285B1C8000A25704 /* CoreDateViewModel.swift */,
+				31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */,
+				31117BD9285B3E0E0072C3B9 /* StateManager.swift */,
+				31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		96419B68285B1C8100A25704 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96419B9D285B26B500A25704 /* MapView */,
+				96419BA0285B284D00A25704 /* CategoryListView */,
+				31117BD4285B39010072C3B9 /* PinListView */,
+				96419BA1285B2FC000A25704 /* PinDetailView */,
+				96419B9B285B239100A25704 /* PinDetailAddView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96419B96285B1D4C00A25704 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96419B67285B1C8000A25704 /* Persistence.swift */,
+				96419B48285B1A7700A25704 /* Moment.xcdatamodeld */,
+				31117BD7285B3DE50072C3B9 /* CoreDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96419B97285B1D5F00A25704 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C19F0E092856271100EDC807 /* UIImageFileManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		96419B9B285B239100A25704 /* PinDetailAddView */ = {
+			isa = PBXGroup;
+			children = (
+				96419B6C285B1C8100A25704 /* WritingView.swift */,
+				96419B72285B1C8100A25704 /* EditMapView.swift */,
 			);
 			path = PinDetailAddView;
+			sourceTree = "<group>";
+		};
+		96419B9D285B26B500A25704 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				96419B74285B1C8100A25704 /* MainView.swift */,
+				96419B6A285B1C8100A25704 /* MapView.swift */,
+				96419B6E285B1C8100A25704 /* PinDrawStyle.swift */,
+				96419B9F285B282000A25704 /* MainSubView */,
+				96419B9E285B26CA00A25704 /* MapSubView */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		96419B9E285B26CA00A25704 /* MapSubView */ = {
+			isa = PBXGroup;
+			children = (
+				96419B71285B1C8100A25704 /* PinView.swift */,
+				96419B70285B1C8100A25704 /* LoopingPinView.swift */,
+			);
+			path = MapSubView;
+			sourceTree = "<group>";
+		};
+		96419B9F285B282000A25704 /* MainSubView */ = {
+			isa = PBXGroup;
+			children = (
+				96419B76285B1C8100A25704 /* MenuView.swift */,
+				96419B6F285B1C8100A25704 /* EmoPicker.swift */,
+				96419B77285B1C8100A25704 /* DelayView.swift */,
+				96419B78285B1C8100A25704 /* PinPageView.swift */,
+			);
+			path = MainSubView;
+			sourceTree = "<group>";
+		};
+		96419BA0285B284D00A25704 /* CategoryListView */ = {
+			isa = PBXGroup;
+			children = (
+				96419B69285B1C8100A25704 /* TotalTripView.swift */,
+				31117BDD285B423D0072C3B9 /* CategoryListVew.swift */,
+				31117BE5285B4B4F0072C3B9 /* OpeningView.swift */,
+				31117BE7285B64ED0072C3B9 /* CategoryAddView.swift */,
+			);
+			path = CategoryListView;
+			sourceTree = "<group>";
+		};
+		96419BA1285B2FC000A25704 /* PinDetailView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PinDetailView;
 			sourceTree = "<group>";
 		};
 		C1F48C4728537E1E00CA8600 = {
 			isa = PBXGroup;
 			children = (
+				96419B4B285B1AD300A25704 /* Category+CoreDataClass.swift */,
+				96419B4C285B1AD300A25704 /* Category+CoreDataProperties.swift */,
+				96419B4D285B1AD300A25704 /* Pin+CoreDataClass.swift */,
+				96419B4E285B1AD300A25704 /* Pin+CoreDataProperties.swift */,
+				96419B4F285B1AD300A25704 /* Photo+CoreDataClass.swift */,
+				96419B50285B1AD300A25704 /* Photo+CoreDataProperties.swift */,
 				C1F48C5228537E1E00CA8600 /* Moment */,
 				C1F48C6828537E1F00CA8600 /* MomentTests */,
 				C1F48C7228537E1F00CA8600 /* MomentUITests */,
@@ -132,6 +309,11 @@
 				C1F48C5728537E1E00CA8600 /* Assets.xcassets */,
 				C1F48C5C28537E1E00CA8600 /* Persistence.swift */,
 				C1F48C5E28537E1E00CA8600 /* Moment.xcdatamodeld */,
+				96419B68285B1C8100A25704 /* View */,
+				96419B64285B1C8000A25704 /* ViewModel */,
+				96419B96285B1D4C00A25704 /* Model */,
+				96419B97285B1D5F00A25704 /* Manager */,
+				96419B7D285B1C8100A25704 /* Assets.xcassets */,
 				C1F48C5928537E1E00CA8600 /* Preview Content */,
 			);
 			path = Moment;
@@ -179,6 +361,7 @@
 			);
 			name = Moment;
 			packageProductDependencies = (
+				96419B99285B1DDC00A25704 /* SwiftUIPager */,
 			);
 			productName = Moment;
 			productReference = C1F48C5028537E1E00CA8600 /* Moment.app */;
@@ -253,6 +436,7 @@
 			);
 			mainGroup = C1F48C4728537E1E00CA8600;
 			packageReferences = (
+				96419B98285B1DDC00A25704 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = C1F48C5128537E1E00CA8600 /* Products */;
 			projectDirPath = "";
@@ -271,7 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1F48C5B28537E1E00CA8600 /* Preview Assets.xcassets in Resources */,
-				C1F48C5828537E1E00CA8600 /* Assets.xcassets in Resources */,
+				96419B94285B1C8100A25704 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,17 +480,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1F48C5D28537E1E00CA8600 /* Persistence.swift in Sources */,
+				96419B83285B1C8100A25704 /* TotalTripView.swift in Sources */,
+				96419B8D285B1C8100A25704 /* MainView.swift in Sources */,
+				96419B55285B1AD300A25704 /* Photo+CoreDataClass.swift in Sources */,
+				96419B8A285B1C8100A25704 /* PinView.swift in Sources */,
+				96419B52285B1AD300A25704 /* Category+CoreDataProperties.swift in Sources */,
+				96419B54285B1AD300A25704 /* Pin+CoreDataProperties.swift in Sources */,
+				31117BD8285B3DE50072C3B9 /* CoreDataManager.swift in Sources */,
+				96419B88285B1C8100A25704 /* EmoPicker.swift in Sources */,
+				31117BE2285B42640072C3B9 /* PinCardView.swift in Sources */,
+				96419B8F285B1C8100A25704 /* MenuView.swift in Sources */,
+				96419B90285B1C8100A25704 /* DelayView.swift in Sources */,
+				31117BDE285B423D0072C3B9 /* CategoryListVew.swift in Sources */,
+				96419B86285B1C8100A25704 /* WritingView.swift in Sources */,
+				96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */,
 				C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */,
 				C19F0E1D28569D6500EDC807 /* RootPresentationModeExtension.swift in Sources */,
-				C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */,
 				C19F0E192856939900EDC807 /* AddDetailTest.swift in Sources */,
-				C1F48C6028537E1E00CA8600 /* Moment.xcdatamodeld in Sources */,
 				C19F0E1B2856968100EDC807 /* PinContentAddView.swift in Sources */,
 				C19F0E1528568C5000EDC807 /* ButtonStyles.swift in Sources */,
 				C19F0E1F2856E01F00EDC807 /* ImagePicker.swift in Sources */,
 				C19F0E1728568FA300EDC807 /* PinImageAddView.swift in Sources */,
 				C19F0E132856855100EDC807 /* PinDetailAddView.swift in Sources */,
+				31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */,
+				96419B89285B1C8100A25704 /* LoopingPinView.swift in Sources */,
+				96419B80285B1C8100A25704 /* CoreDateViewModel.swift in Sources */,
+				96419B84285B1C8100A25704 /* MapView.swift in Sources */,
+				C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */,
+				31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */,
+				96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */,
+				31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */,
+				96419B91285B1C8100A25704 /* PinPageView.swift in Sources */,
+				96419B82285B1C8100A25704 /* Persistence.swift in Sources */,
+				96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */,
+				96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */,
+				31117BE6285B4B4F0072C3B9 /* OpeningView.swift in Sources */,
+				31117BE0285B425E0072C3B9 /* PinListView.swift in Sources */,
+				96419B4A285B1A7700A25704 /* Moment.xcdatamodeld in Sources */,
+				96419B8B285B1C8100A25704 /* EditMapView.swift in Sources */,
+				31117BE8285B64ED0072C3B9 /* CategoryAddView.swift in Sources */,
+				C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */,
+				96419B81285B1C8100A25704 /* MapViewModel.swift in Sources */,
+				31117BE4285B426D0072C3B9 /* PinNavbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +684,7 @@
 				DEVELOPMENT_TEAM = 68LU7Q7XD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "원활한 앱 사용을 위해 사용자의 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -501,6 +717,7 @@
 				DEVELOPMENT_TEAM = 68LU7Q7XD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "원활한 앱 사용을 위해 사용자의 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -638,13 +855,32 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		96419B98285B1DDC00A25704 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96419B99285B1DDC00A25704 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96419B98285B1DDC00A25704 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin XCVersionGroup section */
-		C1F48C5E28537E1E00CA8600 /* Moment.xcdatamodeld */ = {
+		96419B48285B1A7700A25704 /* Moment.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C1F48C5F28537E1E00CA8600 /* Moment.xcdatamodel */,
+				96419B49285B1A7700A25704 /* CoreDataModel.xcdatamodel */,
 			);
-			currentVersion = C1F48C5F28537E1E00CA8600 /* Moment.xcdatamodel */;
+			currentVersion = 96419B49285B1A7700A25704 /* CoreDataModel.xcdatamodel */;
 			path = Moment.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
