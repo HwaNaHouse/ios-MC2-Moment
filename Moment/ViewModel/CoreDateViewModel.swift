@@ -15,10 +15,11 @@ final class CoreDataViewModel: ObservableObject {
     
     @AppStorage("currentCategory") var selection: Int = 0
     
-//    @Published var currentPin: Pin? = nil
-    
-    
-    //viewContext.fetch(Category.fetchRequest())
-   
-    
+    func pinColor(pin: Pin, _ colorString: String) -> Color {
+        if pin.content == Optional(nil) {
+            return .black
+        } else {
+            return Color(colorString)
+        }
+    }
 }

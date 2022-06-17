@@ -88,7 +88,7 @@ struct PageView: View {
                         .background(
                             Circle()
                                 .fill(
-                                    Color("\(category.categoryColor ?? "")")
+                                    cVM.pinColor(pin: pin, category.unwrappedCategoryColor)
                                 )
                                 .frame(width: 30, height: 30)
                         )

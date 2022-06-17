@@ -14,6 +14,7 @@ struct PinView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var viewModel: MapViewModel
+    @EnvironmentObject var cVM: CoreDataViewModel
     var pin: Pin
     @Binding var currentPin: Pin?
     var color: String
@@ -35,7 +36,7 @@ struct PinView: View {
                         .resizable()
                         .frame(width: 28, height: 28)
                         .background(
-                            PurplePin(color: Color(color))
+                            PurplePin(color: cVM.pinColor(pin: pin, color))
                                 .frame(width: 36, height: 45)
                                 .offset(y: 4)
                         )
@@ -47,7 +48,7 @@ struct PinView: View {
                         .frame(width: 23, height: 23) //깨짐 방지.
                         .background(
                             Circle()
-                                .fill(Color(color))
+                                .fill(cVM.pinColor(pin: pin, color))
                                 .frame(width: 30, height: 30)
                         )
                         .padding()
@@ -81,6 +82,7 @@ struct PinView_Previews: PreviewProvider {
         
         return PinView(pin: pin1, currentPin: .constant(pin1), color: "red", offset: .constant(CGPoint(x: 100, y: 100)), isRemove: .constant(true))
             .environmentObject(MapViewModel())
+            .environmentObject(CoreDataViewModel())
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
