@@ -33,7 +33,7 @@
 
 |<img src="https://user-images.githubusercontent.com/33242880/174058911-c089f0cb-05b7-465c-a64e-0c2e7ee75af5.png">|<img src="https://user-images.githubusercontent.com/33242880/174058909-47add89c-bae8-4603-a3e9-0e84b8bae7f6.png">|<img src="https://user-images.githubusercontent.com/33242880/174058912-850e52d4-3670-404c-a294-1d91b5e0dd78.png">|<img src="https://user-images.githubusercontent.com/33242880/174058899-9be51153-3fc4-4544-8273-2f35d012f5b9.png">|<img src="https://user-images.githubusercontent.com/33242880/174058903-8149f453-495a-4294-81a1-356abb720517.png">|<img src="https://user-images.githubusercontent.com/33242880/174058905-78df0f70-ad0d-49a9-9a84-53ac064a6ee9.png">|
 |:-:|:-:|:-:|:-:|:-:|:-:|
-|[Tamna(HyeonsooKim)](https://github.com/BrightHyeon)|[Jessica(YeonheeHan)](https://github.com/hanyeonhee)|[Hwana(KyuhwanLee)](https://github.com/KyuHwan00)|[Robin(MinjaeKim)](https://github.com/minjae9610)|[SteveM(MyungjinSim)](https://github.com/myungjinsim)|[X(SooikKim)](https://github.com/profit0124)|
+|[Tamna(HyeonsooKim)](https://github.com/BrightHyeon)|[Jessica(YeonheeHan)](https://github.com/hanyeonhee)|[Hwana(KyuhwanLee)](https://github.com/KyuHwan00)|[Robin(MinjaeKim)](https://github.com/minjae9610)|[Steve(MyungjinSim)](https://github.com/myungjinsim)|[X(SooikKim)](https://github.com/profit0124)|
 
 
 ## Git Commit Message
