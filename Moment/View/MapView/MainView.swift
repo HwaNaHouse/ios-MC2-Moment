@@ -31,8 +31,9 @@ struct MainView: View {
     @State private var offset: CGPoint = CGPoint(x: 0, y: 0)
     
     var body: some View {
-        ZStack {
-            NavigationView {
+        NavigationView {
+            ZStack {
+                //            NavigationView {
                 ZStack {
                     if categories.count != 0 {
                         MapView(category: categories[cVM.selection], currentPin: $currentPin, pinMode: pinMode, isActive: isActive, offset: $offset, isRemove: $isRemove)
@@ -176,14 +177,17 @@ struct MainView: View {
                 .sheet(isPresented: $isShowCategorySheet) {
                     MakeCategoryView(selection: $cVM.selection, isShowCategorySheet: $isShowCategorySheet)
                 }
-                .navigationBarHidden(true)
+                //                .navigationBarHidden(true)
+                //            }
+                //            .environment(\.rootPresentationMode, self.$isNavigationViewActive)
+                
+                TotalTripView() //sheet view
+                //                OpeningView()
+                
             }
-            .environment(\.rootPresentationMode, self.$isNavigationViewActive)
-            
-            TotalTripView() //sheet view
-            //                OpeningView()
-            
+            .navigationBarHidden(true)
         }
+        .environment(\.rootPresentationMode, self.$isNavigationViewActive)
     }
 }
 

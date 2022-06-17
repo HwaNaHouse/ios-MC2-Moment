@@ -15,6 +15,12 @@ import SwiftUI
 
 struct PinImageAddView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @Binding var pin: Pin
+    @Binding var selection: Int
+    @Binding var pinName: String
+    @Binding var isComplete: Bool
+    
     @State private var selectedImages: [UIImage] = []
     @State private var showImagePicker: Bool = false
     
@@ -88,7 +94,7 @@ struct PinImageAddView: View {
                     }
                     .buttonStyle(PreviousButtonStyle())
                     
-                    NavigationLink(destination: PinContentAddView()) {
+                    NavigationLink(destination: PinContentAddView(pin: $pin, selection: $selection, pinName: $pinName, isComplete: $isComplete, selectedImages: $selectedImages)) {
                         Text("다음 단계로")
                     }
                     .isDetailLink(false)
@@ -107,6 +113,12 @@ struct PinImageAddView: View {
 
 struct PinImageAddView_Previews: PreviewProvider {
     static var previews: some View {
-        PinImageAddView()
+        let viewContext = PersistenceController.preview.container.viewContext
+        let newPin = Pin(context: viewContext)
+        
+        PinImageAddView(pin: .constant(newPin), selection: .constant(0), pinName: .constant("TestPinName"), isComplete: .constant(true))
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(MapViewModel())
+            .environmentObject(CoreDataViewModel())
     }
 }

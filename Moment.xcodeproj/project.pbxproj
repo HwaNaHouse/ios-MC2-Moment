@@ -246,7 +246,7 @@
 				C169FE6E285C8D8400401EA8 /* PinContentAddView.swift */,
 				96419B6C285B1C8100A25704 /* WritingView.swift */,
 				96419B72285B1C8100A25704 /* EditMapView.swift */,
-				C169FE69285C8D8400401EA8 /* Extras */,
+				C169FE69285C8D8400401EA8 /* Styles */,
 			);
 			path = PinDetailAddView;
 			sourceTree = "<group>";
@@ -294,12 +294,12 @@
 			path = CategoryListView;
 			sourceTree = "<group>";
 		};
-		C169FE69285C8D8400401EA8 /* Extras */ = {
+		C169FE69285C8D8400401EA8 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
 				C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */,
 			);
-			path = Extras;
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		C1F48C4728537E1E00CA8600 = {

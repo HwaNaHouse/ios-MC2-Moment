@@ -114,16 +114,16 @@ struct PageView: View {
                 }
                 
                 Spacer().frame(height: 25)
-                if pin.title == Optional(nil) {
-                    NavigationLink(destination: PinDetailAddView(), isActive: self.$isNavigationViewActive) {
+//                if pin.title == Optional(nil) {
+                    NavigationLink(destination: PinDetailAddView(pin: editPin ?? pin, selection: cVM.selection, isComplete: $isComplete), isActive: self.$isNavigationViewActive) {
                         bottomButton(pin)
                     }
                     .isDetailLink(false)
-                } else {
-                    NavigationLink(destination: Text("디테일뷰")) {  //MARK: Go to DetailView
-                        bottomButton(pin)
-                    }
-                }
+//                } else {
+//                    NavigationLink(destination: Text("디테일뷰")) {  //MARK: Go to DetailView
+//                        bottomButton(pin)
+//                    }
+//                }
             }
             .padding(20)
             .background(.white)
@@ -147,10 +147,12 @@ struct PageView: View {
     private func copyPin(_ pin: Pin) -> Pin {
         let editPin = Pin(context: viewContext)
         editPin.emotion = pin.emotion
+        editPin.title = pin.title
         editPin.createdAt = pin.createdAt
         editPin.latitude = pin.latitude
         editPin.longtitude = pin.longtitude
-        
+        editPin.content = pin.content
+
         return editPin
     }
     
