@@ -76,10 +76,10 @@ struct PageView: View {
             VStack {
                 Spacer()
                 HStack {
-                    Text(pin.placeName ?? "Title Please")
+                    Text(pin.title ?? "Title Please")
                         .font(.title2)
                         .fontWeight(.semibold)
-                        .foregroundColor(pin.placeName == Optional(nil) ? .secondary : .black)
+                        .foregroundColor(pin.title == Optional(nil) ? .secondary : .black)
                         .lineLimit(1)
                     Spacer()
                     Image(pin.unwrappedEmotion)
@@ -88,7 +88,7 @@ struct PageView: View {
                         .background(
                             Circle()
                                 .fill(
-                                    Color("\(category.unwrappedColor)")
+                                    Color("\(category.categoryColor ?? "")")
                                 )
                                 .frame(width: 30, height: 30)
                         )
@@ -113,7 +113,7 @@ struct PageView: View {
                 Spacer().frame(height: 25)
                 
                 NavigationLink {
-                    if pin.placeName == Optional(nil) {
+                    if pin.title == Optional(nil) {
                         //실제로 클릭 시 들어가는 값은 editPin이다.
                         WritingView(pin: editPin ?? pin, selection: cVM.selection, isComplete: $isComplete)
                     } else {
@@ -145,7 +145,7 @@ struct PageView: View {
     private func copyPin(_ pin: Pin) -> Pin {
         let editPin = Pin(context: viewContext)
         editPin.emotion = pin.emotion
-        editPin.date = pin.date
+        editPin.createdAt = pin.createdAt
         editPin.latitude = pin.latitude
         editPin.longtitude = pin.longtitude
         
@@ -162,7 +162,7 @@ struct PageView: View {
     private func bottomButton(_ pin: Pin) -> some View {
         HStack {
             Spacer()
-            Text(pin.placeName == Optional(nil) ? "핀 완성하기" : "핀 확인하기")
+            Text(pin.title == Optional(nil) ? "핀 완성하기" : "핀 확인하기")
                 .foregroundColor(.white)
                 .fontWeight(.bold)
             Spacer()

@@ -55,6 +55,7 @@ struct ContentView: View {
                     MoveAuthView()
                 }
             }
+            OpeningView()
         }
     }
 }

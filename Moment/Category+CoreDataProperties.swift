@@ -16,13 +16,14 @@ extension Category {
         return NSFetchRequest<Category>(entityName: "Category")
     }
 
-    @NSManaged public var color: String?
-    @NSManaged public var date: Date?
+    @NSManaged public var categoryColor: String?
+    @NSManaged public var startDate: Date?
+    @NSManaged public var endDate: Date?
     @NSManaged public var title: String?
     @NSManaged public var pin: NSSet?
     
-    public var unwrappedColor: String {
-        color ?? "default"
+    public var unwrappedCategoryColor: String {
+        categoryColor ?? "default"
     }
     public var unwrappedTitle: String {
         title ?? "Unknown category title"
@@ -31,7 +32,7 @@ extension Category {
         let pinSet = pin as? Set<Pin> ?? []
         
         return pinSet.sorted {
-            $0.date < $1.date
+            $0.createdAt < $1.createdAt
         }
     }
 

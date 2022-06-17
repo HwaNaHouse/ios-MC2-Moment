@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EmoPicker: View {
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.date, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var viewModel: MapViewModel
     @ObservedObject var category: Category
@@ -56,7 +56,7 @@ struct EmoPicker: View {
         withAnimation {
             let newPin = Pin(context: viewContext)
             newPin.emotion = emotion
-            newPin.date = Date()
+            newPin.createdAt = Date()
             newPin.latitude = viewModel.region.center.latitude
             newPin.longtitude = viewModel.region.center.longitude
             

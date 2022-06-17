@@ -56,7 +56,7 @@ struct PinView: View {
             .overlay(
                 GeometryReader { geo -> Color in
                     if isRemove {
-                        if Date().timeIntervalSince(pin.date) <= 2.0 { //Try Debugging
+                        if Date().timeIntervalSince(pin.createdAt) <= 2.0 { //Try Debugging
                             DispatchQueue.main.async {
                                 self.offset = CGPoint(x: geo.frame(in: .global).midX+7, y: geo.frame(in: .global).minY-width*2.3)
                             }
@@ -73,8 +73,8 @@ struct PinView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PersistenceController.preview.container.viewContext
         let pin1 = Pin(context: viewContext)
-        pin1.placeName = "Jeju"
-        pin1.date = Date()
+        pin1.title = "Jeju"
+        pin1.createdAt = Date()
         pin1.latitude = 123.0012
         pin1.longtitude = 34.234
         pin1.emotion = "soso"

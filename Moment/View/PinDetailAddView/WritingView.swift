@@ -12,7 +12,7 @@ import MapKit
 
 struct WritingView: View {
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.date, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var viewModel: MapViewModel
     @EnvironmentObject var cVM: CoreDataViewModel
@@ -82,7 +82,7 @@ struct WritingView: View {
                             content:
                                 HStack {
                                     Image(systemName: "calendar")
-                                    DatePicker("", selection: $pin.date, displayedComponents: [.date, .hourAndMinute]).labelsHidden()
+                                    DatePicker("", selection: $pin.createdAt, displayedComponents: [.date, .hourAndMinute]).labelsHidden()
                                 }
                             ,isLeading: true)
                     }
@@ -122,7 +122,7 @@ struct WritingView: View {
             VStack {
                 Spacer().frame(height: isShow ? 0 : 170)
                 ZStack {
-                    EditMapView(pin: $pin, color: categories[selection].unwrappedColor, isShow: $isShow)
+                    EditMapView(pin: $pin, color: categories[selection].unwrappedCategoryColor, isShow: $isShow)
                         .frame(maxHeight: isShow ? .infinity : 150)
                         .mask(
                             RoundedRectangle(cornerRadius: 20, style: .continuous)
