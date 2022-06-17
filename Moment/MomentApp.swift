@@ -15,12 +15,17 @@ struct MomentApp: App {
     
     let mapViewModel: MapViewModel = MapViewModel()
     let coreDataViewModel: CoreDataViewModel = CoreDataViewModel()
+//    let viewModel = CoreDataRealationshipViewModel()
+    let stateManage = StateManage()
+    
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(mapViewModel)
                 .environmentObject(coreDataViewModel)
+                .environmentObject(stateManage)
+//                .environmentObject(viewModel)
                 .environment(\.managedObjectContext, persistenceController.viewContext)
         }
     }

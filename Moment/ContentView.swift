@@ -13,22 +13,29 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.date, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
     
     var body: some View {
-        MainView()
-        .onAppear {
-            if categories.isEmpty {
-                withAnimation {
-                    let newCategory = Category(context: viewContext)
-                    newCategory.title = "일상 여행"
-                    newCategory.color = "default"
-                    newCategory.date = Date()
+        ZStack {
+            MainView()
+            .onAppear {
+                if categories.isEmpty {
+                    withAnimation {
+                        let newCategory = Category(context: viewContext)
+                        newCategory.title = "일상 여행"
+                        newCategory.categoryColor = "default"
+                        newCategory.startDate = Date()
 
-                    PersistenceController.shared.saveContext()
+                        PersistenceController.shared.saveContext()
+                    }
                 }
             }
+            OpeningView()
         }
+        
+           
+        
+        
     }
 }
 

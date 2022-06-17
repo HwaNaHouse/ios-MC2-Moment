@@ -57,7 +57,7 @@ struct EditMapView: View {
                                     if annotation.count == 2 { //나갈 때. 수정했으면 수정한 거를 돌려주기.
                                         //                                    pin = annotation[1] //MARK: 왜 이렇게 넣어주면 뒤에 적용이 안되고, 아래처럼 명시적으로 넣어야하지?
                                         pin.emotion = annotation[1].emotion
-                                        pin.date = annotation[1].date
+                                        pin.createdAt = annotation[1].createdAt
                                         pin.latitude = annotation[1].latitude
                                         pin.longtitude = annotation[1].longtitude
                                     }
@@ -123,7 +123,7 @@ struct EditMapView: View {
     private func makeNewPin(emotion: String) {
         let newPin = Pin(context: viewContext)
         newPin.emotion = emotion
-        newPin.date = pin.date
+        newPin.createdAt = pin.createdAt
         newPin.latitude = region.center.latitude
         newPin.longtitude = region.center.longitude
         
@@ -164,6 +164,8 @@ struct EditMapView: View {
         .opacity(isActive ? 1 : 0)
         .offset(x: isActive ? offset : 0)
     }
+    
+    
 }
 
 struct EditPinView: View {

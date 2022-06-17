@@ -16,23 +16,23 @@ extension Pin {
         return NSFetchRequest<Pin>(entityName: "Pin")
     }
 
-    @NSManaged public var contents: String?
-    @NSManaged public var date: Date
+    @NSManaged public var content: String?
+    @NSManaged public var createdAt: Date
     @NSManaged public var emotion: String?
     @NSManaged public var latitude: Double
     @NSManaged public var longtitude: Double
-    @NSManaged public var placeName: String?
-    @NSManaged public var Category: Category?
+    @NSManaged public var title: String?
+    @NSManaged public var category: Category?
     @NSManaged public var photo: NSSet?
 
     public var unwrappedEmotion: String {
         emotion ?? "Unknown emotion"
     }
     public var unwrappedPlaceName: String {
-        placeName ?? "Unknown placeName"
+        title ?? "Unknown placeName"
     }
     public var unwrappedContents: String {
-        contents ?? "Unknown Contents"
+        content ?? "Unknown Contents"
     }
     public var photoArray: Set<Photo> {
         let photoSet = photo as? Set<Photo> ?? []

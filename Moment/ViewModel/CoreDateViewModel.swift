@@ -12,8 +12,13 @@ final class CoreDataViewModel: ObservableObject {
     
     @Environment(\.managedObjectContext) private var viewContext
     
+    
     @AppStorage("currentCategory") var selection: Int = 0
     
 //    @Published var currentPin: Pin? = nil
+    
+    
+    //viewContext.fetch(Category.fetchRequest())
+   
     
 }
