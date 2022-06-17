@@ -31,6 +31,11 @@
 		96419B91285B1C8100A25704 /* PinPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B78285B1C8100A25704 /* PinPageView.swift */; };
 		96419B94285B1C8100A25704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96419B7D285B1C8100A25704 /* Assets.xcassets */; };
 		96419B9A285B1DDC00A25704 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 96419B99285B1DDC00A25704 /* SwiftUIPager */; };
+		96E62928285C45FE002A0240 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E62927285C45FE002A0240 /* Settings.bundle */; };
+		96E6292B285C479E002A0240 /* MoveSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6292A285C479E002A0240 /* MoveSettingView.swift */; };
+		96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E6292D285C48BB002A0240 /* SettingLocation.mp4 */; };
+		96E62930285C48BB002A0240 /* SettingAuth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E6292E285C48BB002A0240 /* SettingAuth.mp4 */; };
+		96E62932285C48F7002A0240 /* MoveAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E62931285C48F7002A0240 /* MoveAuthView.swift */; };
 		C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E092856271100EDC807 /* UIImageFileManager.swift */; };
 		C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5328537E1E00CA8600 /* MomentApp.swift */; };
 		C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5528537E1E00CA8600 /* ContentView.swift */; };
@@ -81,6 +86,11 @@
 		96419B77285B1C8100A25704 /* DelayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
 		96419B78285B1C8100A25704 /* PinPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPageView.swift; sourceTree = "<group>"; };
 		96419B7D285B1C8100A25704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96E62927285C45FE002A0240 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		96E6292A285C479E002A0240 /* MoveSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSettingView.swift; sourceTree = "<group>"; };
+		96E6292D285C48BB002A0240 /* SettingLocation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SettingLocation.mp4; sourceTree = "<group>"; };
+		96E6292E285C48BB002A0240 /* SettingAuth.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SettingAuth.mp4; sourceTree = "<group>"; };
+		96E62931285C48F7002A0240 /* MoveAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAuthView.swift; sourceTree = "<group>"; };
 		C19F0E092856271100EDC807 /* UIImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFileManager.swift; sourceTree = "<group>"; };
 		C1F48C5028537E1E00CA8600 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F48C5328537E1E00CA8600 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
@@ -131,6 +141,7 @@
 		96419B68285B1C8100A25704 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96E62929285C476B002A0240 /* AuthView */,
 				96419B9D285B26B500A25704 /* MapView */,
 				96419BA0285B284D00A25704 /* CategoryListView */,
 				96419BA1285B2FC000A25704 /* PinDetailView */,
@@ -212,6 +223,24 @@
 			path = PinDetailView;
 			sourceTree = "<group>";
 		};
+		96E62929285C476B002A0240 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				96E6292A285C479E002A0240 /* MoveSettingView.swift */,
+				96E62931285C48F7002A0240 /* MoveAuthView.swift */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		96E6292C285C4852002A0240 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				96E6292E285C48BB002A0240 /* SettingAuth.mp4 */,
+				96E6292D285C48BB002A0240 /* SettingLocation.mp4 */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		C1F48C4728537E1E00CA8600 = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +276,8 @@
 				96419B64285B1C8000A25704 /* ViewModel */,
 				96419B96285B1D4C00A25704 /* Model */,
 				96419B97285B1D5F00A25704 /* Manager */,
+				96E6292C285C4852002A0240 /* Assets */,
+				96E62927285C45FE002A0240 /* Settings.bundle */,
 				96419B7D285B1C8100A25704 /* Assets.xcassets */,
 				C1F48C5928537E1E00CA8600 /* Preview Content */,
 			);
@@ -389,6 +420,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1F48C5B28537E1E00CA8600 /* Preview Assets.xcassets in Resources */,
+				96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */,
+				96E62930285C48BB002A0240 /* SettingAuth.mp4 in Resources */,
+				96E62928285C45FE002A0240 /* Settings.bundle in Resources */,
 				96419B94285B1C8100A25704 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,10 +468,12 @@
 				96419B91285B1C8100A25704 /* PinPageView.swift in Sources */,
 				96419B82285B1C8100A25704 /* Persistence.swift in Sources */,
 				96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */,
+				96E6292B285C479E002A0240 /* MoveSettingView.swift in Sources */,
 				96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */,
 				96419B4A285B1A7700A25704 /* Moment.xcdatamodeld in Sources */,
 				96419B8B285B1C8100A25704 /* EditMapView.swift in Sources */,
 				C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */,
+				96E62932285C48F7002A0240 /* MoveAuthView.swift in Sources */,
 				96419B81285B1C8100A25704 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
