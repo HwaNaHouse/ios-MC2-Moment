@@ -232,13 +232,13 @@
 			path = AuthView;
 			sourceTree = "<group>";
 		};
-		96E6292C285C4852002A0240 /* Assets */ = {
+		96E6292C285C4852002A0240 /* VideoAssets */ = {
 			isa = PBXGroup;
 			children = (
 				96E62933285C5D50002A0240 /* SetAuth.mp4 */,
 				96E6292D285C48BB002A0240 /* SettingLocation.mp4 */,
 			);
-			path = Assets;
+			path = VideoAssets;
 			sourceTree = "<group>";
 		};
 		C1F48C4728537E1E00CA8600 = {
@@ -276,7 +276,7 @@
 				96419B64285B1C8000A25704 /* ViewModel */,
 				96419B96285B1D4C00A25704 /* Model */,
 				96419B97285B1D5F00A25704 /* Manager */,
-				96E6292C285C4852002A0240 /* Assets */,
+				96E6292C285C4852002A0240 /* VideoAssets */,
 				96E62927285C45FE002A0240 /* Settings.bundle */,
 				96419B7D285B1C8100A25704 /* Assets.xcassets */,
 				C1F48C5928537E1E00CA8600 /* Preview Content */,
