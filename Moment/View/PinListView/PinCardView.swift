@@ -49,7 +49,7 @@ struct PinCardView: View {
                     Color.red.padding(0)
                         .opacity(cardOffset.width < 0 || movingOffset < 0 ? 1: 0)
                 }
-                .frame(height: 95)
+                .frame(height: 94)
                 .cornerRadius(10)
                 .padding(.horizontal, 23)
                 
@@ -88,8 +88,10 @@ struct PinCardView: View {
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(5)
-                        .frame(width: 81,height: 74)
+                        .frame(width: 74,height: 74)
                         .padding(.trailing, 14.43)
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
                         
                 }
                 .background(.white)
@@ -130,6 +132,7 @@ struct PinCardView: View {
 
         
     }
+    
 }
 
 struct PinCardView_Previews: PreviewProvider {
