@@ -61,7 +61,7 @@ struct WritingView: View {
                     }
                 }
                 VStack(alignment: .leading) {
-                    Text("핀 위치 설정").bold()
+                    Text("핀 제목").bold()
                     Button {
                         isShow.toggle()
                     } label: {

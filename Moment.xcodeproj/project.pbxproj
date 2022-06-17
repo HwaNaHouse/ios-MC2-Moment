@@ -47,6 +47,11 @@
 		96419B91285B1C8100A25704 /* PinPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B78285B1C8100A25704 /* PinPageView.swift */; };
 		96419B94285B1C8100A25704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96419B7D285B1C8100A25704 /* Assets.xcassets */; };
 		96419B9A285B1DDC00A25704 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 96419B99285B1DDC00A25704 /* SwiftUIPager */; };
+		96E62928285C45FE002A0240 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E62927285C45FE002A0240 /* Settings.bundle */; };
+		96E6292B285C479E002A0240 /* MoveSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6292A285C479E002A0240 /* MoveSettingView.swift */; };
+		96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E6292D285C48BB002A0240 /* SettingLocation.mp4 */; };
+		96E62932285C48F7002A0240 /* MoveAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E62931285C48F7002A0240 /* MoveAuthView.swift */; };
+		96E62934285C5D50002A0240 /* SetAuth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E62933285C5D50002A0240 /* SetAuth.mp4 */; };
 		C169FE6F285C8D8400401EA8 /* PinDetailAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE68285C8D8400401EA8 /* PinDetailAddView.swift */; };
 		C169FE70285C8D8400401EA8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6A285C8D8400401EA8 /* ImagePicker.swift */; };
 		C169FE71285C8D8400401EA8 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */; };
@@ -120,6 +125,11 @@
 		96419B77285B1C8100A25704 /* DelayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
 		96419B78285B1C8100A25704 /* PinPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPageView.swift; sourceTree = "<group>"; };
 		96419B7D285B1C8100A25704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96E62927285C45FE002A0240 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		96E6292A285C479E002A0240 /* MoveSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSettingView.swift; sourceTree = "<group>"; };
+		96E6292D285C48BB002A0240 /* SettingLocation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SettingLocation.mp4; sourceTree = "<group>"; };
+		96E62931285C48F7002A0240 /* MoveAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAuthView.swift; sourceTree = "<group>"; };
+		96E62933285C5D50002A0240 /* SetAuth.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SetAuth.mp4; sourceTree = "<group>"; };
 		C169FE68285C8D8400401EA8 /* PinDetailAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailAddView.swift; sourceTree = "<group>"; };
 		C169FE6A285C8D8400401EA8 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -211,6 +221,7 @@
 		96419B68285B1C8100A25704 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96E62929285C476B002A0240 /* AuthView */,
 				96419B9D285B26B500A25704 /* MapView */,
 				96419BA0285B284D00A25704 /* CategoryListView */,
 				31117BD4285B39010072C3B9 /* PinListView */,
@@ -305,6 +316,24 @@
 			path = Extras;
 			sourceTree = "<group>";
 		};
+		96E62929285C476B002A0240 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				96E6292A285C479E002A0240 /* MoveSettingView.swift */,
+				96E62931285C48F7002A0240 /* MoveAuthView.swift */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		96E6292C285C4852002A0240 /* VideoAssets */ = {
+			isa = PBXGroup;
+			children = (
+				96E62933285C5D50002A0240 /* SetAuth.mp4 */,
+				96E6292D285C48BB002A0240 /* SettingLocation.mp4 */,
+			);
+			path = VideoAssets;
+			sourceTree = "<group>";
+		};
 		C1F48C4728537E1E00CA8600 = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +369,8 @@
 				96419B64285B1C8000A25704 /* ViewModel */,
 				96419B96285B1D4C00A25704 /* Model */,
 				96419B97285B1D5F00A25704 /* Manager */,
+				96E6292C285C4852002A0240 /* VideoAssets */,
+				96E62927285C45FE002A0240 /* Settings.bundle */,
 				96419B7D285B1C8100A25704 /* Assets.xcassets */,
 				C1F48C5928537E1E00CA8600 /* Preview Content */,
 			);
@@ -482,6 +513,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1F48C5B28537E1E00CA8600 /* Preview Assets.xcassets in Resources */,
+				96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */,
+				96E62928285C45FE002A0240 /* Settings.bundle in Resources */,
+				96E62934285C5D50002A0240 /* SetAuth.mp4 in Resources */,
 				96419B94285B1C8100A25704 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +573,7 @@
 				0CDC8CA2285C5C5A008E587A /* RecordedMemoView.swift in Sources */,
 				96419B82285B1C8100A25704 /* Persistence.swift in Sources */,
 				96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */,
+				96E6292B285C479E002A0240 /* MoveSettingView.swift in Sources */,
 				C169FE76285C8DAD00401EA8 /* RootPresentationModeExtension.swift in Sources */,
 				96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */,
 				C169FE70285C8D8400401EA8 /* ImagePicker.swift in Sources */,
@@ -553,6 +588,7 @@
 				96419B8B285B1C8100A25704 /* EditMapView.swift in Sources */,
 				31117BE8285B64ED0072C3B9 /* CategoryAddView.swift in Sources */,
 				C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */,
+				96E62932285C48F7002A0240 /* MoveAuthView.swift in Sources */,
 				96419B81285B1C8100A25704 /* MapViewModel.swift in Sources */,
 				31117BE4285B426D0072C3B9 /* PinNavbar.swift in Sources */,
 			);

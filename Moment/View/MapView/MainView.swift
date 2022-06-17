@@ -154,6 +154,7 @@ struct MainView: View {
                     if !categories.isEmpty {
                         if currentPin != Optional(nil) {
                             if categories[cVM.selection].pinArray.contains(currentPin!) {
+                                //category 변경 시 터짐.
                                 VStack {
                                     Spacer()
                                     PinPageView(pageIndex: .withIndex(categories[cVM.selection].pinArray.firstIndex(where: { pin in
@@ -173,12 +174,11 @@ struct MainView: View {
                     }
                 }
                 .sheet(isPresented: $isShowCategorySheet) {
-                    MakeCategoryView(selection: $cVM.selection, isShowCategorySheet: $isShowCategorySheet)
+                    MakeCategoryView(isShowCategorySheet: $isShowCategorySheet, categoriesCount: categories.count)
                 }
                 
                 TotalTripView() //sheet view
 //                OpeningView()
-                
             }
             .navigationBarHidden(true)
         }
@@ -198,31 +198,40 @@ struct MainView_Previews: PreviewProvider {
 }
 
 struct MakeCategoryView: View {
-    @EnvironmentObject var viewModel: MapViewModel
+    @EnvironmentObject var cVM: CoreDataViewModel
     @Environment(\.managedObjectContext) var viewContext
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
     
     @State private var title: String = ""
-    @Binding var selection: Int
     @Binding var isShowCategorySheet: Bool
     @State private var selectedColor: String = "default"
-    var colors: [String] = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"]
-    
+    var colors: [String] = ["red", "orange", "yellow", "green", "blue", "redpink", "pink", "mint", "purple", "brown"]
+    var categoriesCount: Int
     
     var body: some View {
         let titleLimit = 15
         
         VStack(alignment: .leading, spacing: 50) {
             
-            Text("새로운 카테고리 생성하기")
-                .font(.title2).bold()
-                .foregroundColor(Color.defaultColor)
+            grabber()
+            
+            Text("새로운 카테고리")
+                .font(.title).bold()
+                .foregroundColor(.black)
             
             VStack(alignment: .leading) {
+                Text("카테고리 이름")
+                    .bold()
+                
+                
                 HStack {
-                    Text("카테고리명")
-                        .bold()
+                    TextField("탐나님의 \(categoriesCount)번째 여행", text: $title)
+                        .frame(height: 40)
+                        .padding(.all, 5)
+                        .font(Font.system(size: 23, design: .rounded).bold())
+                        .modifier(ClearButton(text: $title))
+                        .onChange(of: title) { _ in
+                            title = String(title.prefix(titleLimit))
+                        }
                     
                     Spacer()
                     
@@ -230,46 +239,52 @@ struct MakeCategoryView: View {
                         Text("\(title.count)")
                             .font(.footnote)
                         Text("/15")
-                            .font(.footnote)
+                            .font(.footnote).foregroundColor(.secondary)
                     }
+                    .frame(width: 35)
                 }
-                
-                TextField("탐나님의 \(categories.count+1)번째 여행", text: $title)
-                    .frame(height: 40)
-                    .padding(.all, 5)
-                    .font(Font.system(size: 23, design: .rounded).bold())
-                    .modifier(ClearButton(text: $title))
-                    .onChange(of: title) { _ in
-                        title = String(title.prefix(titleLimit))
-                    }
-                
-                RoundedRectangle(cornerRadius: 1)
-                    .frame(height: 2)
+                .padding(10)
+                .modifier(MakeBorder(maxHeight: 50))
             }
             
             VStack(alignment: .leading) {
                 Text("색상 선택")
                     .bold()
-                HStack {
-                    ForEach(colors, id: \.self) { color in
-                        Button {
-                            self.selectedColor = color
-                        } label: {
-                            colorButton(color)
+                VStack {
+                    HStack {
+                        ForEach(colors[0...4], id: \.self) { color in
+                            Button {
+                                self.selectedColor = color
+                            } label: {
+                                colorButton(color)
+                            }
+                        }
+                    }
+                    HStack {
+                        ForEach(colors[5...9], id: \.self) { color in
+                            Button {
+                                self.selectedColor = color
+                            } label: {
+                                colorButton(color)
+                            }
                         }
                     }
                 }
-                .frame(height: UIScreen.main.bounds.height/12)
+                .padding()
+                .frame(height: 160)
+                .modifier(MakeBorder(maxHeight: 160))
             }
+            
+            Spacer()
             
             Button {
                 addCategory()
                 isShowCategorySheet.toggle()
-                self.selection = 0
+                cVM.selection = 0
             } label: {
                 HStack {
                     Spacer()
-                    Text("카테고리 생성")
+                    Text("설정 완료")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
                     Spacer()
@@ -280,10 +295,10 @@ struct MakeCategoryView: View {
             }
             .disabled(title.isEmpty || selectedColor == "default")
             
-            Spacer()
             
         }
         .padding()
+        .offset()
     }
         
     private func addCategory() {
@@ -302,9 +317,19 @@ struct MakeCategoryView: View {
         Circle()
             .foregroundColor(Color(color).opacity(color == selectedColor ? 0.3 : 0))
             .overlay(
-                Circle().frame(width: 25, height: 25)
+                Circle().frame(width: 40, height: 40)
                 .foregroundColor(Color(color))
             )
+    }
+    
+    private func grabber() -> some View {
+        HStack {
+            Spacer()
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width: 50, height: 5)
+                .foregroundColor(.secondary)
+            Spacer()
+        }
     }
 }
 
@@ -313,7 +338,7 @@ struct ClearButton: ViewModifier {
     @Binding var text: String
     
     func body(content: Content) -> some View {
-        ZStack(alignment: .trailing) {
+        HStack(alignment: .center) {
             
             content
                 .disableAutocorrection(true) //MARK: 자동완성 없애주는 친구.
@@ -329,5 +354,22 @@ struct ClearButton: ViewModifier {
                 .padding(.trailing, 10)
             }
         }
+    }
+}
+
+
+struct MakeBorder: ViewModifier {
+    var maxHeight: CGFloat
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: maxHeight)
+            .background(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .foregroundColor(.white)
+            )
+            .background(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(.gray)
+            )
     }
 }

@@ -18,6 +18,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     @Published var isEdited: Bool = false //edit중이었어서 카테고리 이동할 때는 firstPin함수 호출안되도록.
     
+    @Published var isShowingAlert: Bool = false //위치 권한 묻는 온보딩.
+    
     var locationManager: CLLocationManager?
     
     //MARK: Authorization-related Methods
@@ -56,9 +58,12 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             print("Your location is restricted likely due to parental controls.")
             
         case .denied:
+            isShowingAlert = true
             print("You have denied this app location permissions. Go into settings to change it")
             
         case .authorizedWhenInUse, .authorizedAlways:
+            isShowingAlert = false
+            
             region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MapDetails.defaultSpan)
             
             locationManager.startUpdatingLocation()
@@ -75,7 +80,6 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             break
         }
     }
-    
     
     //MARK: Location-related Methods
     
