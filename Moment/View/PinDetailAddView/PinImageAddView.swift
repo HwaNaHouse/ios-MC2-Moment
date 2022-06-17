@@ -49,7 +49,9 @@ struct PinImageAddView: View {
                                             .frame(width: UIScreen.main.bounds.size.width * 0.846, height: UIScreen.main.bounds.size.width * 0.846)
                                             .clipShape(RoundedRectangle(cornerRadius: 10))
                                             .onAppear {
-                                                proxy.scrollTo(index, anchor: .leading)
+                                                withAnimation {
+                                                    proxy.scrollTo(index, anchor: .leading)
+                                                }
                                             }
                                             .id(index)
                                             .padding(UIScreen.main.bounds.size.width * 0.04)

@@ -1,5 +1,5 @@
 //
-//  RootPresentationModeExtension.swift
+//  PresentationModeExtension.swift
 //  Moment
 //
 //  Created by 김민재 on 2022/06/11.
@@ -8,11 +8,8 @@ import SwiftUI
 
 /*
  * 환경변수 설정
+ * Source : https://github.com/Whiffer/SwiftUI-PopToRootExample
  */
-
-struct RootPresentationModeKey: EnvironmentKey {
-    static let defaultValue: Binding<RootPresentationMode> = .constant(RootPresentationMode())
-}
 
 extension EnvironmentValues {
     var rootPresentationMode: Binding<RootPresentationMode> {
@@ -24,8 +21,11 @@ extension EnvironmentValues {
 typealias RootPresentationMode = Bool
 
 extension RootPresentationMode {
-    
     public mutating func dismiss() {
         self.toggle()
     }
+}
+
+struct RootPresentationModeKey: EnvironmentKey {
+    static let defaultValue: Binding<RootPresentationMode> = .constant(RootPresentationMode())
 }
