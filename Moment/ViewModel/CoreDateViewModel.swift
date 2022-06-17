@@ -12,14 +12,5 @@ final class CoreDataViewModel: ObservableObject {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-    
     @AppStorage("currentCategory") var selection: Int = 0
-    
-    func pinColor(pin: Pin, _ colorString: String) -> Color {
-        if pin.content == Optional(nil) {
-            return .black
-        } else {
-            return Color(colorString)
-        }
-    }
 }

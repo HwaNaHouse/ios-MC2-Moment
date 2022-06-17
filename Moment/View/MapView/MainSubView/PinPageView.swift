@@ -88,7 +88,7 @@ struct PageView: View {
                         .background(
                             Circle()
                                 .fill(
-                                    cVM.pinColor(pin: pin, category.unwrappedCategoryColor)
+                                    pinColor(pin: pin, category.unwrappedCategoryColor)
                                 )
                                 .frame(width: 30, height: 30)
                         )
@@ -139,6 +139,14 @@ struct PageView: View {
             } else {
                 self.editPin = copyPin(pin) //복사본
             }
+        }
+    }
+    
+    private func pinColor(pin: Pin, _ colorString: String) -> Color {
+        if pin.content == Optional(nil) {
+            return .black
+        } else {
+            return Color(colorString)
         }
     }
     

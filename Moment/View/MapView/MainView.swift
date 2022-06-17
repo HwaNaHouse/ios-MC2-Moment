@@ -224,7 +224,7 @@ struct MakeCategoryView: View {
                 
                 
                 HStack {
-                    TextField("나의 \(categoriesCount)번째 Moment", text: $title)
+                    TextField("나의 \(categoriesCount+1)번째 Moment", text: $title)
                         .frame(height: 40)
                         .padding(.all, 5)
                         .font(Font.system(size: 23, design: .rounded).bold())

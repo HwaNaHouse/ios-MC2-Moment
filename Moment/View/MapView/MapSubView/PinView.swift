@@ -36,7 +36,7 @@ struct PinView: View {
                         .resizable()
                         .frame(width: 28, height: 28)
                         .background(
-                            PurplePin(color: cVM.pinColor(pin: pin, color))
+                            PurplePin(color: pinColor(pin: pin, color))
                                 .frame(width: 36, height: 45)
                                 .offset(y: 4)
                         )
@@ -48,7 +48,7 @@ struct PinView: View {
                         .frame(width: 23, height: 23) //깨짐 방지.
                         .background(
                             Circle()
-                                .fill(cVM.pinColor(pin: pin, color))
+                                .fill(pinColor(pin: pin, color))
                                 .frame(width: 30, height: 30)
                         )
                         .padding()
@@ -68,7 +68,15 @@ struct PinView: View {
             )
         }
     }
+    
+    private func pinColor(pin: Pin, _ colorString: String) -> Color {
+        if pin.content == Optional(nil) {
+            return .black
+        } else {
+            return Color(colorString)
+        }
     }
+}
 
 struct PinView_Previews: PreviewProvider {
     static var previews: some View {
