@@ -15,7 +15,7 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Category.date, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: true)], animation: .default) private var categories: FetchedResults<Category>
     @EnvironmentObject var viewModel: MapViewModel
     
     @State private var isEnabled: Bool = true
@@ -28,8 +28,8 @@ struct ContentView: View {
                         withAnimation {
                             let newCategory = Category(context: viewContext)
                             newCategory.title = "일상 여행"
-                            newCategory.color = "default"
-                            newCategory.date = Date()
+                            newCategory.categoryColor = "default"
+                            newCategory.startDate = Date()
                             
                             PersistenceController.shared.saveContext()
                         }
