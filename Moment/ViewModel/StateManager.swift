@@ -15,6 +15,8 @@ class StateManage: ObservableObject {
     @Published var isPinListShow: Bool
     @Published var isPinNavbarTitleShow: Bool
     
+    @Published var isDetailShow: Bool
+    
     init() {
         self.sheetModeValue = "low"
         self.sheetHeightValue = UIScreen.main.bounds.height
@@ -22,6 +24,7 @@ class StateManage: ObservableObject {
         self.isPinListShow = false
         self.isPinNavbarTitleShow = false
         self.canScroll = false
+        self.isDetailShow = false
         
     }
     

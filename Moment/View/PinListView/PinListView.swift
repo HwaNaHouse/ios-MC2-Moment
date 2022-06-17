@@ -62,9 +62,15 @@ struct PinListView: View {
                     //코어데이터로 For문 돌려 카드 컴퍼넌트에 스테이트 바인딩 해주기
                     ForEach(0..<10) { i in
                         PinCardView()
+                            .onTapGesture {
+                                sm.isDetailShow.toggle()
+                            }
                         
                     }
                 }
+                .fullScreenCover(isPresented: $sm.isDetailShow, content: {
+                    PinDetailView()
+                })
                 .background(GeometryReader {
                     Color.clear.preference(key: ViewOffsetKey.self,
                         value: -$0.frame(in: .named("scroll")).origin.y)

@@ -32,7 +32,6 @@ struct PinNavbar: View {
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(.white)
-                        .font(.headline)
                         .frame(width:14, height:21)
                         .background{
                             Circle()
@@ -60,7 +59,6 @@ struct PinNavbar: View {
                         .resizable()
                         .scaledToFit()
                         .foregroundColor(.white)
-                        .font(.headline)
                         .frame(width:14, height:21)
                         .background{
                             Circle()
