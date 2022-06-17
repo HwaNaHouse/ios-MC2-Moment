@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct MomentApp: App {
-    @Environment(\.scenePhase) var scenePhase
     
     let persistenceController = PersistenceController.shared
     
