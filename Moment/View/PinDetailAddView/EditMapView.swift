@@ -171,6 +171,7 @@ struct EditMapView: View {
 }
 
 struct EditPinView: View {
+    @EnvironmentObject var cVM: CoreDataViewModel
     var pin: Pin?
     var color: String
     var annotations: [Pin] = []
@@ -196,7 +197,7 @@ struct EditPinView: View {
                 .frame(width: 23, height: 23) //깨짐 방지.
                 .background(
                     Circle()
-                        .fill(Color(color))
+                        .fill(pin?.content == Optional(nil) ? Color.black : Color(color))
                         .frame(width: 30, height: 30)
                 )
                 .padding()

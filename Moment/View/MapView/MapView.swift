@@ -46,11 +46,6 @@ struct MapView: View {
                 }
                 .edgesIgnoringSafeArea(.all)
                 .accentColor(.pink)
-                .onAppear {
-                    if viewModel.isFirstShow {
-                        viewModel.checkIfLocationServicesIsEnabled()
-                    }
-                }
             
             if pinMode {
                 if isActive {

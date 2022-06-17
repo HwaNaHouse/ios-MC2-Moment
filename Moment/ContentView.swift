@@ -34,6 +34,9 @@ struct ContentView: View {
                             PersistenceController.shared.saveContext()
                         }
                     }
+                    if viewModel.isFirstShow {
+                        viewModel.checkIfLocationServicesIsEnabled()
+                    }
                 }
                 .onChange(of: scenePhase) { newPhase in
                     if newPhase == .active {
