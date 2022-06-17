@@ -18,7 +18,6 @@ struct PurplePin: View {
             .fill(
                 color
             )
-            .frame(width: 36, height: 45)
     }
 }
 

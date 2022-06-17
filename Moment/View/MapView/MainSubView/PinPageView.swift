@@ -82,16 +82,15 @@ struct PageView: View {
                         .foregroundColor(pin.placeName == Optional(nil) ? .secondary : .black)
                         .lineLimit(1)
                     Spacer()
-                    Text(pin.unwrappedEmotion)
-                        .font(.system(size: 23))
-                        .frame(width: 30, height: 30)
+                    Image(pin.unwrappedEmotion)
+                        .resizable()
+                        .frame(width: 23, height: 23)
                         .background(
                             Circle()
                                 .fill(
                                     Color("\(category.unwrappedColor)")
                                 )
                                 .frame(width: 30, height: 30)
-                                .offset(x: -0.5, y: 0.7)
                         )
                 }
                 

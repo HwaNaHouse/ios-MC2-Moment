@@ -9,14 +9,17 @@ import SwiftUI
 import AVKit
 
 struct MoveSettingView: View {
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some View {
         ZStack {
             Color.black.opacity(0.8)
                 .ignoresSafeArea()
             
             VStack(alignment: .leading, spacing: 50) {
-                Text("'위치 정보 서비스'켜기")
-                    .font(.title).bold()
+                Text("위치 정보 서비스를 \n켜주세요")
+                    .font(.title)
+                    .fontWeight(.black)
                     .foregroundColor(.white)
                 
                 VStack(alignment: .leading, spacing: 30) {
@@ -37,21 +40,15 @@ struct MoveSettingView: View {
                     }
                 } label: {
                     HStack {
-                        Text("설정 메뉴로 이동합니다.")
-                            .font(.title2).bold()
-                            .foregroundColor(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
-                            .frame(maxWidth: .infinity)
-                        Image(systemName: "chevron.right")
-                            .font(.body.bold())
-                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text("설정화면 이동")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        Spacer()
                     }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(.mint.opacity(0.8))
-                    )
+                    .padding(.vertical, 10)
+                    .background(RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(Color.defaultColor))
                 }
             }
             .padding(20)
@@ -71,11 +68,12 @@ struct SettingLocationView: UIViewRepresentable {
         return PlayerSettingView(frame: .zero) //why zero?
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        //Do nothing here.
+        
     }
 }
 
 class PlayerSettingView: UIView {
+    
     
     private var playerLayer = AVPlayerLayer()
     

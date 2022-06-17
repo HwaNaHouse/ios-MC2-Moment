@@ -34,8 +34,8 @@
 		96E62928285C45FE002A0240 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96E62927285C45FE002A0240 /* Settings.bundle */; };
 		96E6292B285C479E002A0240 /* MoveSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E6292A285C479E002A0240 /* MoveSettingView.swift */; };
 		96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E6292D285C48BB002A0240 /* SettingLocation.mp4 */; };
-		96E62930285C48BB002A0240 /* SettingAuth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E6292E285C48BB002A0240 /* SettingAuth.mp4 */; };
 		96E62932285C48F7002A0240 /* MoveAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E62931285C48F7002A0240 /* MoveAuthView.swift */; };
+		96E62934285C5D50002A0240 /* SetAuth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E62933285C5D50002A0240 /* SetAuth.mp4 */; };
 		C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E092856271100EDC807 /* UIImageFileManager.swift */; };
 		C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5328537E1E00CA8600 /* MomentApp.swift */; };
 		C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5528537E1E00CA8600 /* ContentView.swift */; };
@@ -89,8 +89,8 @@
 		96E62927285C45FE002A0240 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		96E6292A285C479E002A0240 /* MoveSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSettingView.swift; sourceTree = "<group>"; };
 		96E6292D285C48BB002A0240 /* SettingLocation.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SettingLocation.mp4; sourceTree = "<group>"; };
-		96E6292E285C48BB002A0240 /* SettingAuth.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SettingAuth.mp4; sourceTree = "<group>"; };
 		96E62931285C48F7002A0240 /* MoveAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveAuthView.swift; sourceTree = "<group>"; };
+		96E62933285C5D50002A0240 /* SetAuth.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SetAuth.mp4; sourceTree = "<group>"; };
 		C19F0E092856271100EDC807 /* UIImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFileManager.swift; sourceTree = "<group>"; };
 		C1F48C5028537E1E00CA8600 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F48C5328537E1E00CA8600 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 		96E6292C285C4852002A0240 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				96E6292E285C48BB002A0240 /* SettingAuth.mp4 */,
+				96E62933285C5D50002A0240 /* SetAuth.mp4 */,
 				96E6292D285C48BB002A0240 /* SettingLocation.mp4 */,
 			);
 			path = Assets;
@@ -421,8 +421,8 @@
 			files = (
 				C1F48C5B28537E1E00CA8600 /* Preview Assets.xcassets in Resources */,
 				96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */,
-				96E62930285C48BB002A0240 /* SettingAuth.mp4 in Resources */,
 				96E62928285C45FE002A0240 /* Settings.bundle in Resources */,
+				96E62934285C5D50002A0240 /* SetAuth.mp4 in Resources */,
 				96419B94285B1C8100A25704 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

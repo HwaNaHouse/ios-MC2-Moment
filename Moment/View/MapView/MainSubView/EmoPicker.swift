@@ -22,10 +22,10 @@ struct EmoPicker: View {
         let width = UIScreen.main.bounds.width / 10
         
         ZStack {
-            makeButton("😃", offset: -width*3.4)
-            makeButton("🥰", offset: -width*2)
-            makeButton("🥲", offset: width*2)
-            makeButton("🙁", offset: width*3.4)
+            makeButton("smile", offset: -width*3.4)
+            makeButton("love", offset: -width*2)
+            makeButton("sad", offset: width*2)
+            makeButton("soso", offset: width*3.4)
         }
         .background(
             Capsule()
@@ -44,8 +44,9 @@ struct EmoPicker: View {
                 addPin()
             }
         } label: {
-            Text(emotion)
-                .font(.system(size: 28))
+            Image(emotion)
+                .resizable()
+                .frame(width: 28, height: 28)
         }
         .opacity(isActive ? 1 : 0)
         .offset(x: isActive ? offset : 0)

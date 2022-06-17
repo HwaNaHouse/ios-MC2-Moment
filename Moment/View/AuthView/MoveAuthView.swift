@@ -16,7 +16,8 @@ struct MoveAuthView: View {
             
             VStack(alignment: .leading, spacing: 50) {
                 Text("위치 정보 수집 권한을\n변경해주세요")
-                    .font(.title).bold()
+                    .font(.title)
+                    .fontWeight(.black)
                     .foregroundColor(.white)
                 
                 VStack(alignment: .leading, spacing: 30) {
@@ -36,21 +37,15 @@ struct MoveAuthView: View {
                     }
                 } label: {
                     HStack {
-                        Text("설정 메뉴로 이동합니다.")
-                            .font(.title2).bold()
-                            .foregroundColor(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.5)
-                            .frame(maxWidth: .infinity)
-                        Image(systemName: "chevron.right")
-                            .font(.body.bold())
-                            .foregroundColor(.secondary)
+                        Spacer()
+                        Text("설정화면 이동")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        Spacer()
                     }
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(.mint.opacity(0.8))
-                    )
+                    .padding(.vertical, 10)
+                    .background(RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(Color.defaultColor))
                 }
             }
             .padding(20)
@@ -81,7 +76,7 @@ class PlayerAuthView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let file = Bundle.main.url(forResource: "SettingAuth", withExtension: "mp4")!
+        let file = Bundle.main.url(forResource: "SetAuth", withExtension: "mp4")!
         let item = AVPlayerItem(url: file)
         
         let player = AVPlayer(playerItem: item)

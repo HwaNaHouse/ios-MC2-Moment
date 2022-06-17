@@ -102,10 +102,10 @@ struct EditMapView: View {
                     }
                     .background(
                         ZStack {
-                            makeButton("😃", offset: -width*3.4)
-                            makeButton("🥰", offset: -width*2)
-                            makeButton("🥲", offset: width*2)
-                            makeButton("🙁", offset: width*3.4)
+                            makeButton("smile", offset: -width*3.4)
+                            makeButton("love", offset: -width*2)
+                            makeButton("sad", offset: width*2)
+                            makeButton("soso", offset: width*3.4)
                         }
                             .background(
                                 Capsule()
@@ -158,8 +158,10 @@ struct EditMapView: View {
                 self.isActive.toggle()
             }
         } label: {
-            Text(emotion)
-                .font(.system(size: 28))
+            Image(emotion)
+                .resizable()
+                .frame(width: 28, height: 28) //깨짐 방지.
+                .padding()
         }
         .opacity(isActive ? 1 : 0)
         .offset(x: isActive ? offset : 0)
@@ -174,12 +176,12 @@ struct EditPinView: View {
     
     var body: some View {
         if annotations.count == 1 {
-            makePin(pin!.emotion ?? "🤣", text: "현재 핀", textColor: .defaultColor, opacity: 0, isShow: isShow)
+            makePin(pin!.emotion ?? "smile", text: "현재 핀", textColor: .defaultColor, opacity: 0, isShow: isShow)
         } else {
             if pin == annotations[0] {
-                makePin(pin!.emotion ?? "🤣", text: "이전 핀", textColor: .red, opacity: 0.4, isShow: isShow)
+                makePin(pin!.emotion ?? "smile", text: "이전 핀", textColor: .red, opacity: 0.4, isShow: isShow)
             } else if pin == annotations[1] {
-                makePin(pin!.emotion ?? "🤣", text: "현재 핀", textColor: .defaultColor, opacity: 0, isShow: isShow)
+                makePin(pin!.emotion ?? "smile", text: "현재 핀", textColor: .defaultColor, opacity: 0, isShow: isShow)
             }
         }
     }
@@ -187,14 +189,13 @@ struct EditPinView: View {
     @ViewBuilder
     private func makePin(_ emotion: String, text: String, textColor: Color, opacity: Double, isShow: Bool) -> some View {
         ZStack {
-            Text(emotion)
-                .font(.system(size: 23))
-                .frame(width: 44, height: 44) //깨짐 방지.
+            Image(emotion)
+                .resizable()
+                .frame(width: 23, height: 23) //깨짐 방지.
                 .background(
                     Circle()
-                        .fill(Color("\(color)"))
+                        .fill(Color(color))
                         .frame(width: 30, height: 30)
-                        .offset(x: -0.5, y: 0.7)
                 )
                 .padding()
             if isShow {

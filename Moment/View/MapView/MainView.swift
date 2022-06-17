@@ -154,7 +154,8 @@ struct MainView: View {
                     
                     if !categories.isEmpty {
                         if currentPin != Optional(nil) {
-//                            if categories[cVM.selection].pinArray.contains(currentPin!) {
+                            if categories[cVM.selection].pinArray.contains(currentPin!) {
+                                //category 변경 시 터짐.
                                 VStack {
                                     Spacer()
                                     PinPageView(pageIndex: .withIndex(categories[cVM.selection].pinArray.firstIndex(where: { pin in
@@ -162,7 +163,7 @@ struct MainView: View {
                                     })!), category: categories[cVM.selection], currentPin: $currentPin)
                                     Spacer().frame(height: UIScreen.main.bounds.height / 9.9)
                                 }
-//                            }
+                            }
                         }
                     }
                     
@@ -176,8 +177,7 @@ struct MainView: View {
                 .sheet(isPresented: $isShowCategorySheet) {
                     MakeCategoryView(isShowCategorySheet: $isShowCategorySheet, categoriesCount: categories.count)
                 }
-                
-                TotalTripView() //sheet view
+                TotalTripView()
             }
             .navigationBarHidden(true)
         }
