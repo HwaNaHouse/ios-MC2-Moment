@@ -21,18 +21,11 @@ struct DelayView: View {
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundColor(.black.opacity(0.8))
-            HStack {
-                Button {
-                    deletePin()
-                    isRemove = false
-                } label: {
-                    textEdit(text: "삭제하기", color: Color.red)
-                }
-                Button {
-                    print()
-                } label: {
-                    textEdit(text: "작성하기", color: Color.defaultColor)
-                }
+            Button {
+                deletePin()
+                isRemove = false
+            } label: {
+                textEdit(text: "삭제하기", color: Color.red)
             }
             .padding(.bottom, 10)
         }
