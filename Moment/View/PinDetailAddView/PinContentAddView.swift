@@ -18,6 +18,7 @@ import CoreLocation
 struct PinContentAddView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.rootPresentationMode) private var rootPresentationMode: Binding<RootPresentationMode>
+    @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
@@ -46,8 +47,6 @@ struct PinContentAddView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(.gray, lineWidth: 1)
                 )
-            
-            Text(pin.content ?? "메모 없음")
 
             Spacer()
                 .frame(height: UIScreen.main.bounds.size.height * 0.05)
@@ -61,15 +60,25 @@ struct PinContentAddView: View {
                 .buttonStyle(PreviousButtonStyle())
                 
                 Button(action: {
-                    pin.title = pinName.count == 0 ? nil : pinName
-                    pin.content = pinContent.count == 0 ? nil : pinContent
-                    cVM.selection = selection
-                    viewModel.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longtitude), span: MapDetails.defaultSpan)
+                    let photoSaveTime = Date()
+                    for i in 0 ..< selectedImages.count {
+                        let photoCoreData = Photo(context: viewContext)
+                        photoCoreData.photoName = "\(photoSaveTime.timeIntervalSince1970)_\(String(i)).png"
+                        pin.addToPhoto(photoCoreData)
+                    }
+                    DispatchQueue.main.async {
+                        for (i, photo) in self.selectedImages.enumerated() {
+                            _ = UIImageFileManager.shared.saveImage(image: photo, path: "photo", fileName: "\(photoSaveTime.timeIntervalSince1970)_\(String(i)).png")
+                        }
+                    }
+                    pin.title = self.pinName.count == 0 ? nil : self.pinName
+                    pin.content = self.pinContent.count == 0 ? nil : self.pinContent
+                    cVM.selection = self.selection
+                    viewModel.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: self.pin.latitude, longitude: self.pin.longtitude), span: MapDetails.defaultSpan)
                     viewModel.isFirstShow = false
                     viewModel.isEdited = true
                     categories[selection].addToPin(pin)
                     isComplete = true
-                    
                     self.rootPresentationMode.wrappedValue.dismiss()
                 }) {
                     Text("핀 완료하기")

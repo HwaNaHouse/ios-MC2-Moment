@@ -35,7 +35,6 @@
 		96419B82285B1C8100A25704 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B67285B1C8000A25704 /* Persistence.swift */; };
 		96419B83285B1C8100A25704 /* TotalTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B69285B1C8100A25704 /* TotalTripView.swift */; };
 		96419B84285B1C8100A25704 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6A285B1C8100A25704 /* MapView.swift */; };
-		96419B86285B1C8100A25704 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6C285B1C8100A25704 /* WritingView.swift */; };
 		96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6E285B1C8100A25704 /* PinDrawStyle.swift */; };
 		96419B88285B1C8100A25704 /* EmoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6F285B1C8100A25704 /* EmoPicker.swift */; };
 		96419B89285B1C8100A25704 /* LoopingPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B70285B1C8100A25704 /* LoopingPinView.swift */; };
@@ -108,7 +107,6 @@
 		96419B67285B1C8000A25704 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		96419B69285B1C8100A25704 /* TotalTripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalTripView.swift; sourceTree = "<group>"; };
 		96419B6A285B1C8100A25704 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		96419B6C285B1C8100A25704 /* WritingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		96419B6E285B1C8100A25704 /* PinDrawStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDrawStyle.swift; sourceTree = "<group>"; };
 		96419B6F285B1C8100A25704 /* EmoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoPicker.swift; sourceTree = "<group>"; };
 		96419B70285B1C8100A25704 /* LoopingPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopingPinView.swift; sourceTree = "<group>"; };
@@ -119,6 +117,7 @@
 		96419B77285B1C8100A25704 /* DelayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
 		96419B78285B1C8100A25704 /* PinPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPageView.swift; sourceTree = "<group>"; };
 		96419B7D285B1C8100A25704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C15C7515285EE805008DCC02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C169FE68285C8D8400401EA8 /* PinDetailAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDetailAddView.swift; sourceTree = "<group>"; };
 		C169FE6A285C8D8400401EA8 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -244,7 +243,6 @@
 				C169FE68285C8D8400401EA8 /* PinDetailAddView.swift */,
 				C169FE6C285C8D8400401EA8 /* PinImageAddView.swift */,
 				C169FE6E285C8D8400401EA8 /* PinContentAddView.swift */,
-				96419B6C285B1C8100A25704 /* WritingView.swift */,
 				96419B72285B1C8100A25704 /* EditMapView.swift */,
 				C169FE69285C8D8400401EA8 /* Styles */,
 			);
@@ -331,6 +329,7 @@
 		C1F48C5228537E1E00CA8600 /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				C15C7515285EE805008DCC02 /* Info.plist */,
 				C1F48C5328537E1E00CA8600 /* MomentApp.swift */,
 				C1F48C5528537E1E00CA8600 /* ContentView.swift */,
 				96419B68285B1C8100A25704 /* View */,
@@ -517,7 +516,6 @@
 				96419B8F285B1C8100A25704 /* MenuView.swift in Sources */,
 				96419B90285B1C8100A25704 /* DelayView.swift in Sources */,
 				31117BDE285B423D0072C3B9 /* CategoryListVew.swift in Sources */,
-				96419B86285B1C8100A25704 /* WritingView.swift in Sources */,
 				96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */,
 				C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */,
 				31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */,
@@ -713,6 +711,7 @@
 				DEVELOPMENT_TEAM = 68LU7Q7XD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moment/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "원활한 앱 사용을 위해 사용자의 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -747,6 +746,7 @@
 				DEVELOPMENT_TEAM = 68LU7Q7XD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moment/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "원활한 앱 사용을 위해 사용자의 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
