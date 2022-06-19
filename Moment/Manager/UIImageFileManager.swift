@@ -8,9 +8,7 @@
 import SwiftUI
 
 /*
- * 시스템 데이터이므로 실제 사용할때는 .applicationDirectory를 기본 디렉토리로 사용해야 함
- *
- * 저장되는 이미지 파일을 확인하려면 기본 디렉토리를 .documentDirectory로 설정한 후 프로젝트의 plist에서
+ * 저장되는 이미지 파일을 확인하려면 프로젝트의 plist에서
  * Supports opening documents in place -> Yes
  * Application supports iTunes file sharing -> Yes
  * 로 설정해줘야 함
@@ -18,8 +16,8 @@ import SwiftUI
 
 class UIImageFileManager {
     static let shared = UIImageFileManager()  // 전역 저장
-    private let forDir = FileManager.SearchPathDirectory.applicationDirectory
-    
+    private let forDir = FileManager.SearchPathDirectory.documentDirectory
+
     private init(){}    // 인스턴스 생성 방지용
     
     // 저장
