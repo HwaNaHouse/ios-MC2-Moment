@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PinCardView: View {
-
+    @Environment(\.managedObjectContext) private var viewContext
     
     @GestureState private var movingOffset: CGFloat = .zero
     
@@ -16,15 +16,31 @@ struct PinCardView: View {
     @State var deleteButton: Bool = false
     
     @State private var alertShowing = false
+    public var pin: Pin?
+    @Binding var selectedCategory: Category?
+    @Binding var selectedIndex: Int
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Category.startDate, ascending: false)], animation: .default) private var categories: FetchedResults<Category>
+    
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
 
 // Coredata를 받아오는 작업이 필요함 State
     var body: some View {
+        
+        
         ZStack {
+            // Delete 되면 사라지는 애니메이션을 준다
             if !deleteButton {
             // Delete 버튼
                 HStack {
                     Spacer()
                     Button (action : {
+                        // DragGesture 중 offset인 movingOffset과, 제스쳐 종료시인 CardOffset이 음수일때 클릭시 알러트 뛰움
                         if cardOffset.width < 0 || movingOffset < 0 {
                             alertShowing = true
                         }
@@ -33,7 +49,7 @@ struct PinCardView: View {
                             .font(.system(size: 18))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                            .frame(width: 80, height: 95)
+                            .frame(width: 80, height: 94)
                             .padding(.leading, 50)
 //                            .padding(.trailing, )
                             .padding(.vertical, 35)
@@ -41,15 +57,29 @@ struct PinCardView: View {
                     .alert("정말 삭제하시겠습니까 ?", isPresented: $alertShowing){
                         Button("취소", role: .cancel) {}
                         Button("삭제", role: .destructive) {
-                            
+                            if let deleteData = pin {
+                                
+                                withAnimation{
+                                    deleteButton = true
+                                    // Category내부 PinList가 변화하였음에도 View를 다시 그리지 않아 뷰를 그리지 않게 한 후 삭제 진행
+                                    DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                                        viewContext.delete(deleteData)
+                                    }
+                                }
+                                PersistenceController.shared.saveContext()
+                                
+                                
+                            }
+//                            try viewContext.save()
                         }
                     }
                 }
                 .background{
+                    // DragGesture 중 offset인 movingOffset과, 제스쳐 종료시인 CardOffset이 음수일때 클릭시 투명하게 만듦
                     Color.red.padding(0)
                         .opacity(cardOffset.width < 0 || movingOffset < 0 ? 1: 0)
                 }
-                .frame(height: 95)
+                .frame(height: 94)
                 .cornerRadius(10)
                 .padding(.horizontal, 23)
                 
@@ -57,24 +87,26 @@ struct PinCardView: View {
                 // 위에 투명도?
                 HStack {
                     //이모티콘
-                    Text("😀")
-                        .font(.custom("TossFaceFontMac", size: 28))
+                    Image(pin?.emotion ?? "love")
+                        .resizable()
+                        .frame(width: 21.5, height: 21.5)
                         .background{
                             Circle()
-                                .stroke(.red ,lineWidth: 5)
-                                .offset(y:0.5)
+                                .frame(width: 28, height: 28)
+                                .foregroundColor(Color(selectedCategory?.categoryColor ?? "black"))
+            
                         }
                         .padding(.leading, 23)
                         .padding(.trailing, 7.5)
-                        .padding(.vertical, 26)
+                        .padding(.vertical, 34)
                     VStack (alignment: .leading){
                         // Pin title
-                        Text("첫번째 완료 핀")
+                        Text(pin?.title ?? "NoNamed")
                             .font(.system(size: 18))
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
                         // Pin createAt
-                        Text("2020.05.14")
+                        Text(pin?.createdAt ?? Date(), formatter: dateFormatter)
                             .font(.system(size: 12))
                             .fontWeight(.regular)
                             .foregroundColor(.black)
@@ -84,12 +116,14 @@ struct PinCardView: View {
                     
                     Spacer()
                     // ImageName
-                    Image("1")
+                    Image(pin?.photoArray.count ?? 0 > 0 ? pin?.photoArray[0].photoName ?? "0" : "0")
                         .resizable()
-                        .scaledToFit()
+                        
                         .cornerRadius(5)
                         .frame(width: 81,height: 74)
+                        .aspectRatio(contentMode: .fit)
                         .padding(.trailing, 14.43)
+                        .padding(.vertical, 10)
                         
                 }
                 .background(.white)
@@ -130,10 +164,21 @@ struct PinCardView: View {
 
         
     }
-}
-
-struct PinCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        PinCardView()
+    
+    func changeDateToString(date: Date) -> String {
+        var result = ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        result = dateFormatter.string(from: date)
+        
+        return result
     }
 }
+//
+//struct PinCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PinCardView()
+//    }
+//}

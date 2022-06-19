@@ -26,7 +26,11 @@ enum SmallMapDetails {
 
 struct SmallMapView: View {
     // 나중에 바인딩
+    
+    @Binding var selectedPin: Pin?
+    
     @State var region = MKCoordinateRegion(center: SmallMapDetails.startingLocation, span: SmallMapDetails.defaultSpan)
+    
    
     var body: some View {
         VStack(spacing : 0){
@@ -38,9 +42,14 @@ struct SmallMapView: View {
             .padding(.bottom, 20)
             
             Map(coordinateRegion: $region, interactionModes: [])
-            .overlay(EmoticonView(emoticonColor: Color("default"), emotionFace: "😀"))
+                .overlay(EmoticonView(emoticonColor: Color(selectedPin?.category?.categoryColor ?? "default"), emotionFace: "😀"))
             .frame(width: 344, height: 200)
             
+        }
+        .onAppear{
+            if let data = selectedPin {
+                region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longtitude), span: SmallMapDetails.defaultSpan)
+            }
         }
     }
 }

@@ -38,6 +38,8 @@ struct PinDetailView: View {
     // 모달 시 dismiss
     @Environment(\.presentationMode) var presentationMode
     
+    @Binding public var selectPin: Pin?
+    
     
     var body: some View {
         ZStack{
@@ -65,7 +67,8 @@ struct PinDetailView: View {
                                 }
                                 // GeometryReader에 해당하는 뷰 반환
                                 return AnyView(
-                                    TitleImageView()
+                                    
+                                    TitleImageView(selectedpin: $selectPin)
                                         // 위로 스크롤 시 자연스러운 애니메이션을 위해 크기와 offset값이 변하도록 조정
                                         .overlay(Color.black.opacity(homeData.offset > 0 ? homeData.offset / 400 : 0).frame(width: UIScreen.main.bounds.width))
                                         .frame(width: 390, height: 400)
@@ -76,15 +79,15 @@ struct PinDetailView: View {
                                 
                                 VStack(spacing: 0) {
                                 
-                                    RecordedMemoView().padding(.bottom, 52).padding(.top, 46)
+                                    RecordedMemoView(selectedPin:  $selectPin).padding(.bottom, 52).padding(.top, 46)
                                     
-                                    ImageScrollView(isActivated: $isActivatedShowImageView, indexValue : $indexValue, imageList: $ImageData.allImages ).padding(.bottom, 33).background(Color("backgroundColor"))
+                                    ImageScrollView(isActivated: $isActivatedShowImageView, indexValue : $indexValue, imageList: $selectPin).padding(.bottom, 33).background(Color("backgroundColor"))
                                 
                                     Rectangle()
                                         .foregroundColor(.white)
                                         .frame(height: 300)
                                         .overlay(
-                                            SmallMapView()
+                                            SmallMapView(selectedPin: $selectPin)
                                             )
                                             .padding(.bottom, 41)
                                         
@@ -97,7 +100,7 @@ struct PinDetailView: View {
                     //Section처럼 활용된 view
                     
                     
-                    Text("전통시장")
+                    Text(selectPin?.title ?? "NoNamed")
                         //글자 폰트 사이즈 조정
                         .font(Font.system(size: 18))
                         .fontWeight(.semibold)
@@ -152,7 +155,7 @@ struct PinDetailView: View {
                 }
                 // 사진 크게 보기
             if isActivatedShowImageView {
-                ImageDetailView(isActivatedShowImageView: $isActivatedShowImageView, indexValue: $indexValue, originImageList: $ImageData.allImages).transition(AnyTransition.scale.animation(.easeInOut(duration: 0.2)))
+                ImageDetailView(isActivatedShowImageView: $isActivatedShowImageView, indexValue: $indexValue, selectedPin: $selectPin).transition(AnyTransition.scale.animation(.easeInOut(duration: 0.2)))
             }
         }
         

@@ -34,10 +34,27 @@ extension Pin {
     public var unwrappedContents: String {
         content ?? "Unknown Contents"
     }
-    public var photoArray: Set<Photo> {
+    public var unwrappedCreatedAt: String {
+        changeDateToString(date: createdAt)
+    }
+    
+    public var photoArray: [Photo] {
         let photoSet = photo as? Set<Photo> ?? []
         
-        return photoSet
+        return photoSet.sorted {
+            $0.unwrappedPhotoName < $1.unwrappedPhotoName
+        }
+    }
+    
+    func changeDateToString(date: Date?) -> String {
+        var result = ""
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        result = dateFormatter.string(from: date ?? Date())
+        
+        return result
     }
 }
 

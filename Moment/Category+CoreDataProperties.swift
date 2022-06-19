@@ -21,18 +21,27 @@ extension Category {
     @NSManaged public var endDate: Date?
     @NSManaged public var title: String?
     @NSManaged public var pin: NSSet?
+    @NSManaged public var photo: NSSet?
     
     public var unwrappedCategoryColor: String {
         categoryColor ?? "default"
     }
     public var unwrappedTitle: String {
-        title ?? "Unknown category title"
+        title ?? "UnNamed"
     }
     public var pinArray: [Pin] {
         let pinSet = pin as? Set<Pin> ?? []
         
         return pinSet.sorted {
-            $0.createdAt < $1.createdAt
+            $0.createdAt > $1.createdAt
+        }
+    }
+    
+    public var photoArray: [Photo] {
+        let photoSet = photo as? Set<Photo> ?? []
+        
+        return photoSet.sorted {
+            $0.photoName ?? "" < $1.photoName ?? ""
         }
     }
 
@@ -52,6 +61,9 @@ extension Category {
 
     @objc(removePin:)
     @NSManaged public func removeFromPin(_ values: NSSet)
+    
+    @objc(addPhotoObject:)
+    @NSManaged public func addToPhoto(_ value: Photo)
 
 }
 
