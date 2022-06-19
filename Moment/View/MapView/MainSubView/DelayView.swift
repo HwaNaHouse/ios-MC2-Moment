@@ -40,7 +40,7 @@ struct DelayView: View {
     private func textEdit(text: String, color: Color) -> some View {
         Capsule()
             .fill(color)
-            .frame(width: 70, height: 25)
+            .frame(width: 120, height: 25)
             .overlay(
                 Text(text)
                     .font(.caption)
