@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "sad-emoji.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

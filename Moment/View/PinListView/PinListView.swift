@@ -137,6 +137,5 @@ struct PinListView: View {
             .navigationBarHidden(true)
         }
         .edgesIgnoringSafeArea(.all)
-        .environment(\.rootPresentationMode, self.$isNavigationViewActive)
     }
 }

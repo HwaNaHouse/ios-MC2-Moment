@@ -31,24 +31,24 @@ struct PinView: View {
                 }
             } label: {
                 if pin == currentPin {
-                    Text(pin.unwrappedEmotion)
-                        .font(.system(size: 28))
+                    Image(pin.unwrappedEmotion)
+                        .resizable()
+                        .frame(width: 28, height: 28)
                         .background(
                             PurplePin(color: Color(color))
+                                .frame(width: 36, height: 45)
                                 .offset(y: 4)
                         )
-                        .frame(width: 44, height: 44)
                         .offset(y: -22)
                         .padding()
                 } else {
-                    Text(pin.unwrappedEmotion)
-                        .font(.system(size: 23))
-                        .frame(width: 44, height: 44) //깨짐 방지.
+                    Image(pin.unwrappedEmotion)
+                        .resizable()
+                        .frame(width: 23, height: 23) //깨짐 방지.
                         .background(
                             Circle()
                                 .fill(Color(color))
                                 .frame(width: 30, height: 30)
-                                .offset(x: -0.5, y: 0.7)
                         )
                         .padding()
                 }
@@ -77,7 +77,7 @@ struct PinView_Previews: PreviewProvider {
         pin1.createdAt = Date()
         pin1.latitude = 123.0012
         pin1.longtitude = 34.234
-        pin1.emotion = "😁"
+        pin1.emotion = "soso"
         
         return PinView(pin: pin1, currentPin: .constant(pin1), color: "red", offset: .constant(CGPoint(x: 100, y: 100)), isRemove: .constant(true))
             .environmentObject(MapViewModel())

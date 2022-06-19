@@ -70,7 +70,7 @@ struct PageView: View {
     @State private var isComplete: Bool = false
     @Binding var currentPin: Pin?
     @Binding var isNavigationViewActive: Bool
-
+    
     var body: some View {
         VStack {
             Spacer()
@@ -84,16 +84,15 @@ struct PageView: View {
                         .foregroundColor(pin.title == Optional(nil) ? .secondary : .black)
                         .lineLimit(1)
                     Spacer()
-                    Text(pin.unwrappedEmotion)
-                        .font(.system(size: 23))
-                        .frame(width: 30, height: 30)
+                    Image(pin.unwrappedEmotion)
+                        .resizable()
+                        .frame(width: 23, height: 23)
                         .background(
                             Circle()
                                 .fill(
                                     Color("\(category.categoryColor ?? "")")
                                 )
                                 .frame(width: 30, height: 30)
-                                .offset(x: -0.5, y: 0.7)
                         )
                 }
                 
@@ -114,16 +113,16 @@ struct PageView: View {
                 }
                 
                 Spacer().frame(height: 25)
-//                if pin.title == Optional(nil) {
+                if pin.title == Optional(nil) {
                     NavigationLink(destination: PinDetailAddView(pin: editPin ?? pin, selection: cVM.selection, isComplete: $isComplete), isActive: self.$isNavigationViewActive) {
                         bottomButton(pin)
                     }
                     .isDetailLink(false)
-//                } else {
-//                    NavigationLink(destination: Text("디테일뷰")) {  //MARK: Go to DetailView
-//                        bottomButton(pin)
-//                    }
-//                }
+                } else {
+                    NavigationLink(destination: Text("디테일뷰")) {  //MARK: Go to DetailView
+                        bottomButton(pin)
+                    }
+                }
             }
             .padding(20)
             .background(.white)
@@ -152,7 +151,7 @@ struct PageView: View {
         editPin.latitude = pin.latitude
         editPin.longtitude = pin.longtitude
         editPin.content = pin.content
-
+        
         return editPin
     }
     
