@@ -26,12 +26,14 @@ struct MainView: View {
     @State private var pinMode: Bool = true
     @State private var isActive: Bool = false
     @State private var isRemove: Bool = false
+    @State private var isNavigationViewActive: Bool = false
     @State private var isShowCategorySheet: Bool = false
     @State private var offset: CGPoint = CGPoint(x: 0, y: 0)
     
     var body: some View {
         NavigationView {
             ZStack {
+                //            NavigationView {
                 ZStack {
                     if categories.count != 0 {
                         MapView(category: categories[cVM.selection], currentPin: $currentPin, pinMode: pinMode, isActive: isActive, offset: $offset, isRemove: $isRemove)
@@ -159,7 +161,7 @@ struct MainView: View {
                                     Spacer()
                                     PinPageView(pageIndex: .withIndex(categories[cVM.selection].pinArray.firstIndex(where: { pin in
                                         pin == currentPin
-                                    })!), category: categories[cVM.selection], currentPin: $currentPin)
+                                    })!), category: categories[cVM.selection], currentPin: $currentPin, isNavigationViewActive: $isNavigationViewActive)
                                     Spacer().frame(height: UIScreen.main.bounds.height / 9.9)
                                 }
                             }
@@ -176,12 +178,16 @@ struct MainView: View {
                 .sheet(isPresented: $isShowCategorySheet) {
                     MakeCategoryView(isShowCategorySheet: $isShowCategorySheet, categoriesCount: categories.count)
                 }
+                //                .navigationBarHidden(true)
+                //            }
+                //            .environment(\.rootPresentationMode, self.$isNavigationViewActive)
                 
                 TotalTripView() //sheet view
 //                OpeningView()
             }
             .navigationBarHidden(true)
         }
+        .environment(\.rootPresentationMode, self.$isNavigationViewActive)
     }
 }
 
@@ -291,7 +297,7 @@ struct MakeCategoryView: View {
                 }
                 .padding(.vertical, 10)
                 .background(RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .fill(Color.defaultColor))
+                    .fill(Color.defaultColor))
             }
             .disabled(title.isEmpty || selectedColor == "default")
             
@@ -300,7 +306,7 @@ struct MakeCategoryView: View {
         .padding()
         .offset()
     }
-        
+    
     private func addCategory() {
         withAnimation {
             let newCategory = Category(context: viewContext)

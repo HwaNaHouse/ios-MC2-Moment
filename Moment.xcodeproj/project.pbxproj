@@ -35,7 +35,6 @@
 		96419B82285B1C8100A25704 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B67285B1C8000A25704 /* Persistence.swift */; };
 		96419B83285B1C8100A25704 /* TotalTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B69285B1C8100A25704 /* TotalTripView.swift */; };
 		96419B84285B1C8100A25704 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6A285B1C8100A25704 /* MapView.swift */; };
-		96419B86285B1C8100A25704 /* WritingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6C285B1C8100A25704 /* WritingView.swift */; };
 		96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6E285B1C8100A25704 /* PinDrawStyle.swift */; };
 		96419B88285B1C8100A25704 /* EmoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B6F285B1C8100A25704 /* EmoPicker.swift */; };
 		96419B89285B1C8100A25704 /* LoopingPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96419B70285B1C8100A25704 /* LoopingPinView.swift */; };
@@ -52,13 +51,12 @@
 		96E6292F285C48BB002A0240 /* SettingLocation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E6292D285C48BB002A0240 /* SettingLocation.mp4 */; };
 		96E62932285C48F7002A0240 /* MoveAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E62931285C48F7002A0240 /* MoveAuthView.swift */; };
 		96E62934285C5D50002A0240 /* SetAuth.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 96E62933285C5D50002A0240 /* SetAuth.mp4 */; };
+		C15C7519285F05C1008DCC02 /* PresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE75285C8DAD00401EA8 /* PresentationModeExtension.swift */; };
 		C169FE6F285C8D8400401EA8 /* PinDetailAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE68285C8D8400401EA8 /* PinDetailAddView.swift */; };
 		C169FE70285C8D8400401EA8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6A285C8D8400401EA8 /* ImagePicker.swift */; };
 		C169FE71285C8D8400401EA8 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */; };
 		C169FE72285C8D8400401EA8 /* PinImageAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6C285C8D8400401EA8 /* PinImageAddView.swift */; };
-		C169FE73285C8D8400401EA8 /* AddDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6D285C8D8400401EA8 /* AddDetailTest.swift */; };
 		C169FE74285C8D8400401EA8 /* PinContentAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE6E285C8D8400401EA8 /* PinContentAddView.swift */; };
-		C169FE76285C8DAD00401EA8 /* RootPresentationModeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169FE75285C8DAD00401EA8 /* RootPresentationModeExtension.swift */; };
 		C19F0E0A2856271100EDC807 /* UIImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19F0E092856271100EDC807 /* UIImageFileManager.swift */; };
 		C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5328537E1E00CA8600 /* MomentApp.swift */; };
 		C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F48C5528537E1E00CA8600 /* ContentView.swift */; };
@@ -114,7 +112,6 @@
 		96419B67285B1C8000A25704 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		96419B69285B1C8100A25704 /* TotalTripView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalTripView.swift; sourceTree = "<group>"; };
 		96419B6A285B1C8100A25704 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		96419B6C285B1C8100A25704 /* WritingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingView.swift; sourceTree = "<group>"; };
 		96419B6E285B1C8100A25704 /* PinDrawStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinDrawStyle.swift; sourceTree = "<group>"; };
 		96419B6F285B1C8100A25704 /* EmoPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoPicker.swift; sourceTree = "<group>"; };
 		96419B70285B1C8100A25704 /* LoopingPinView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopingPinView.swift; sourceTree = "<group>"; };
@@ -134,9 +131,8 @@
 		C169FE6A285C8D8400401EA8 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		C169FE6C285C8D8400401EA8 /* PinImageAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinImageAddView.swift; sourceTree = "<group>"; };
-		C169FE6D285C8D8400401EA8 /* AddDetailTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailTest.swift; sourceTree = "<group>"; };
 		C169FE6E285C8D8400401EA8 /* PinContentAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinContentAddView.swift; sourceTree = "<group>"; };
-		C169FE75285C8DAD00401EA8 /* RootPresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationModeExtension.swift; sourceTree = "<group>"; };
+		C169FE75285C8DAD00401EA8 /* PresentationModeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationModeExtension.swift; sourceTree = "<group>"; };
 		C19F0E092856271100EDC807 /* UIImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFileManager.swift; sourceTree = "<group>"; };
 		C1F48C5028537E1E00CA8600 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F48C5328537E1E00CA8600 /* MomentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentApp.swift; sourceTree = "<group>"; };
@@ -211,9 +207,9 @@
 			children = (
 				96419B66285B1C8000A25704 /* MapViewModel.swift */,
 				96419B65285B1C8000A25704 /* CoreDateViewModel.swift */,
+				31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */,
 				31117BD5285B3D5B0072C3B9 /* ViewOffsetKey.swift */,
 				31117BD9285B3E0E0072C3B9 /* StateManager.swift */,
-				31117BDB285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -244,6 +240,8 @@
 		96419B97285B1D5F00A25704 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C169FE6A285C8D8400401EA8 /* ImagePicker.swift */,
+				C169FE75285C8DAD00401EA8 /* PresentationModeExtension.swift */,
 				C19F0E092856271100EDC807 /* UIImageFileManager.swift */,
 			);
 			path = Manager;
@@ -252,13 +250,11 @@
 		96419B9B285B239100A25704 /* PinDetailAddView */ = {
 			isa = PBXGroup;
 			children = (
-				C169FE6D285C8D8400401EA8 /* AddDetailTest.swift */,
 				C169FE68285C8D8400401EA8 /* PinDetailAddView.swift */,
 				C169FE6C285C8D8400401EA8 /* PinImageAddView.swift */,
 				C169FE6E285C8D8400401EA8 /* PinContentAddView.swift */,
-				96419B6C285B1C8100A25704 /* WritingView.swift */,
 				96419B72285B1C8100A25704 /* EditMapView.swift */,
-				C169FE69285C8D8400401EA8 /* Extras */,
+				C169FE69285C8D8400401EA8 /* Styles */,
 			);
 			path = PinDetailAddView;
 			sourceTree = "<group>";
@@ -306,16 +302,6 @@
 			path = CategoryListView;
 			sourceTree = "<group>";
 		};
-		C169FE69285C8D8400401EA8 /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */,
-				C169FE6A285C8D8400401EA8 /* ImagePicker.swift */,
-				C169FE75285C8DAD00401EA8 /* RootPresentationModeExtension.swift */,
-			);
-			path = Extras;
-			sourceTree = "<group>";
-		};
 		96E62929285C476B002A0240 /* AuthView */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +318,14 @@
 				96E6292D285C48BB002A0240 /* SettingLocation.mp4 */,
 			);
 			path = VideoAssets;
+			sourceTree = "<group>";
+		};
+		C169FE69285C8D8400401EA8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				C169FE6B285C8D8400401EA8 /* ButtonStyles.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		C1F48C4728537E1E00CA8600 = {
@@ -541,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15C7519285F05C1008DCC02 /* PresentationModeExtension.swift in Sources */,
 				96419B83285B1C8100A25704 /* TotalTripView.swift in Sources */,
 				96419B8D285B1C8100A25704 /* MainView.swift in Sources */,
 				C169FE74285C8D8400401EA8 /* PinContentAddView.swift in Sources */,
@@ -554,7 +549,6 @@
 				96419B8F285B1C8100A25704 /* MenuView.swift in Sources */,
 				96419B90285B1C8100A25704 /* DelayView.swift in Sources */,
 				31117BDE285B423D0072C3B9 /* CategoryListVew.swift in Sources */,
-				96419B86285B1C8100A25704 /* WritingView.swift in Sources */,
 				96419B51285B1AD300A25704 /* Category+CoreDataClass.swift in Sources */,
 				C1F48C5628537E1E00CA8600 /* ContentView.swift in Sources */,
 				31117BDC285B3E4C0072C3B9 /* CoreDataRealationshipViewModel.swift in Sources */,
@@ -564,7 +558,6 @@
 				C1F48C5428537E1E00CA8600 /* MomentApp.swift in Sources */,
 				0CDC8CA6285C5C5A008E587A /* SmallMapView.swift in Sources */,
 				31117BDA285B3E0E0072C3B9 /* StateManager.swift in Sources */,
-				C169FE73285C8D8400401EA8 /* AddDetailTest.swift in Sources */,
 				0CDC8CA5285C5C5A008E587A /* TitleImageView.swift in Sources */,
 				96419B87285B1C8100A25704 /* PinDrawStyle.swift in Sources */,
 				31117BD6285B3D5B0072C3B9 /* ViewOffsetKey.swift in Sources */,
@@ -574,7 +567,6 @@
 				96419B82285B1C8100A25704 /* Persistence.swift in Sources */,
 				96419B53285B1AD300A25704 /* Pin+CoreDataClass.swift in Sources */,
 				96E6292B285C479E002A0240 /* MoveSettingView.swift in Sources */,
-				C169FE76285C8DAD00401EA8 /* RootPresentationModeExtension.swift in Sources */,
 				96419B56285B1AD300A25704 /* Photo+CoreDataProperties.swift in Sources */,
 				C169FE70285C8D8400401EA8 /* ImagePicker.swift in Sources */,
 				0CDC8CA4285C5C5A008E587A /* ImageDetailView.swift in Sources */,
@@ -753,10 +745,12 @@
 				DEVELOPMENT_TEAM = 68LU7Q7XD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "원활한 앱 사용을 위해 사용자의 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -786,10 +780,12 @@
 				DEVELOPMENT_TEAM = 68LU7Q7XD4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "원활한 앱 사용을 위해 사용자의 위치 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
