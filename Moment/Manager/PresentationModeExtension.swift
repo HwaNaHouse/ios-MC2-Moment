@@ -1,5 +1,5 @@
 //
-//  PresentationModeExtension.swift
+//  RootPresentationModeExtension.swift
 //  Moment
 //
 //  Created by 김민재 on 2022/06/11.
