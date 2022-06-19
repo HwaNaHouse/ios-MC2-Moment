@@ -44,6 +44,7 @@ struct TotalTripView: View {
                 }
             }
             .onEnded { value in
+                // PinList를 보고 있는 상태에선 드래그하여 창을 내릴 수 없게 만든다.
                 if !sm.isPinListShow{
                     sm.sheetModeValue = nearCase(value.translation.height, speed: value.predictedEndTranslation.height)
                 }
@@ -53,11 +54,10 @@ struct TotalTripView: View {
         ZStack {
             Color.white
             VStack {
-//                Color.clear.frame(height: 50)
+                //시트가 드래그 되어 상단에 위치를 하게 되면 ignoreSafetyArea처럼 보이게 하기 위해 프레임으로 영역을 채운다
                 Spacer().frame(height: sm.sheetModeValue == "low" ? 20: 50)
                 
-                //PinListView 영역
-//                PinListView()
+                //탐나 시트 내부에 CategoryListView
                 CategoryListView(sheetModeValue: $sheetMode)
             }
         }
@@ -82,7 +82,7 @@ struct TotalTripView: View {
                     )
                     .offset(y: 10)
                     .frame(width: 50, height: 5)
-                    .opacity(sm.isPinListShow ? 0 : 1)
+                    .opacity(sm.isPinListShow ? 0 : 1) // PinListView가 열리면 상단 라인을 가려준다
                     .foregroundColor(.secondary)
                     .offset(y: offset)
                     .gesture(drag)
@@ -132,5 +132,10 @@ struct TotalTripView: View {
 //struct TNSheet_Previews: PreviewProvider {
 //    static var previews: some View {
 //        TNSheet()
+//    }
+//}
+//struct TotalTripView_Preview: PreviewProvider {
+//    static var previews: some View {
+//        TotalTripView()
 //    }
 //}

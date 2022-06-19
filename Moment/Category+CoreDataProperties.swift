@@ -33,14 +33,16 @@ extension Category {
         let pinSet = pin as? Set<Pin> ?? []
         
         return pinSet.sorted {
-            $0.createdAt < $1.createdAt
+            $0.createdAt > $1.createdAt
         }
     }
     
     public var photoArray: [Photo] {
         let photoSet = photo as? Set<Photo> ?? []
         
-        return Array(photoSet)
+        return photoSet.sorted {
+            $0.photoName ?? "" < $1.photoName ?? ""
+        }
     }
 
 }
@@ -59,6 +61,9 @@ extension Category {
 
     @objc(removePin:)
     @NSManaged public func removeFromPin(_ values: NSSet)
+    
+    @objc(addPhotoObject:)
+    @NSManaged public func addToPhoto(_ value: Photo)
 
 }
 

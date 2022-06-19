@@ -47,7 +47,9 @@ struct TitleImageView: View {
                 
         }
         .frame(height: 520)
-        .background(Image(selectedpin?.photoArray.randomElement()?.photoName ?? "0")
+        .background(
+//            Image(selectedpin?.photoArray.randomElement()?.photoName ?? "0")
+            Image(selectedpin?.photoArray.count ?? 0 > 0 ? selectedpin?.photoArray[0].photoName ?? "0" : "0")
                 .resizable()
                 .scaledToFill()
                 .overlay(linearGradinet)

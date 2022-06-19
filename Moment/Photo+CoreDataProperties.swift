@@ -18,6 +18,7 @@ extension Photo {
 
     @NSManaged public var photoName: String?
     @NSManaged public var Pin: Pin?
+    @NSManaged public var category: Category?
     
     public var unwrappedPhotoName: String {
         photoName ?? "0"

@@ -22,6 +22,9 @@ struct PinListView: View {
     @State var selectPin: Pin?
     
     @Binding var effectID: Int
+    
+    @Binding var selectedIndex: Int
+    
     let namespace: Namespace.ID
     
     var body: some View {
@@ -40,7 +43,7 @@ struct PinListView: View {
                                 .font(.system(size:22))
                                 .fontWeight(.bold)
                             Circle()
-                                .foregroundColor(.red)
+                                .foregroundColor(Color(selectCategory?.categoryColor ?? "black"))
                                 .frame(width: 8, height: 8)
                                 .offset(y: 5)
                                 
@@ -63,11 +66,11 @@ struct PinListView: View {
                         
                     Color.clear.frame(height: 10)
                         .padding(.bottom, 10)
-                    //코어데이터로 For문 돌려 카드 컴퍼넌트에 스테이트 바인딩 해주기
+                    //선택되어진 카테고리내 핀 리스트를 생성
                     if let data = selectCategory {
                         if let pins = data.pinArray {
-                            ForEach(0..<pins.count, id: \.self) { i in
-                                PinCardView(pin: pins[i])
+                            ForEach(0..<(selectCategory!.pinArray.count), id: \.self) { i in
+                                PinCardView(pin: pins[i], selectedCategory: $selectCategory, selectedIndex: $selectedIndex)
                                     .onTapGesture {
                                         sm.isDetailShow.toggle()
                                         selectPin = pins[i]
@@ -116,8 +119,11 @@ struct PinListView: View {
         //일반적인 배경화면
         .background {
             ZStack {
+                let pinArrayCount = selectCategory?.pinArray.count ?? 0
+                
+                
                 VStack(spacing: 0) {
-                    Image(selectCategory?.pinArray.randomElement()?.photoArray.randomElement()?.photoName ?? "0")
+                    Image(pinArrayCount > 0 ? (selectCategory?.pinArray[0].photoArray.count ?? 0 > 0 ? selectCategory?.pinArray[0].photoArray[0].photoName ?? "0" : "0" ): "0")
                         .resizable()
                         .frame(height: 333)
                         .aspectRatio(contentMode: .fit)

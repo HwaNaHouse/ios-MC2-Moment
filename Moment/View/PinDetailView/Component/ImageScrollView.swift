@@ -24,40 +24,42 @@ struct ImageScrollView: View {
         
         // imageList가 빈값이면 뷰를 안보여줌
         if let data = imageList {
-            //Layout
-            VStack(spacing : 0){
-            Spacer().frame(height: 22)
-            Text("여행 사진")
-                    .foregroundColor(Color("default"))
-                    .font(Font.system(size: 20))
-                    .bold()
-                .padding(.bottom, 20)
-                
-            //Image Scroll
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack(spacing : 0){
-                    Spacer().frame(width: 41.5)
-                    //
-                    ForEach(0..<data.photoArray.count){ i in
-                    Button {
-                            indexValue = i
-                            isActivated.toggle()
-                    }label: {
-                        Image(data.photoArray[i].photoName ?? "0")
-                            .resizable()
-                            .frame(width: 300, height: 300)
-                            .cornerRadius(10)
+            if data.photoArray.count > 0 {
+                //Layout
+                VStack(spacing : 0){
+                Spacer().frame(height: 22)
+                Text("여행 사진")
+                        .foregroundColor(Color("default"))
+                        .font(Font.system(size: 20))
+                        .bold()
+                    .padding(.bottom, 20)
+                    
+                //Image Scroll
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack(spacing : 0){
+                        Spacer().frame(width: 41.5)
+                        //
+                        ForEach(0..<data.photoArray.count){ i in
+                        Button {
+                                indexValue = i
+                                isActivated.toggle()
+                        }label: {
+                            Image(data.photoArray[i].photoName ?? "0")
+                                .resizable()
+                                .frame(width: 300, height: 300)
+                                .cornerRadius(10)
+                                }
+                                .padding(.bottom,20).padding(.trailing,  19)
                             }
-                            .padding(.bottom,20).padding(.trailing,  19)
                         }
                     }
-                }
-            
-                Spacer().frame(height: 10)
                 
+                    Spacer().frame(height: 10)
+                    
+                }
+                .background(.white)
+                .shadow(color: .black.opacity(0.08), radius: 26, y: 12)
             }
-            .background(.white)
-            .shadow(color: .black.opacity(0.08), radius: 26, y: 12)
             
         }
     }
