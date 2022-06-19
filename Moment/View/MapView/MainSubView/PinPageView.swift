@@ -18,13 +18,14 @@ struct PinPageView: View {
     @ObservedObject var pageIndex: Page
     @ObservedObject var category: Category
     @Binding var currentPin: Pin?
+    @Binding var isNavigationViewActive: Bool
     
     var body: some View {
         VStack {
             Spacer()
             
             Pager(page: pageIndex, data: category.pinArray) {
-                PageView(category: category, pin: $0, currentPin: $currentPin)
+                PageView(category: category, pin: $0, currentPin: $currentPin, isNavigationViewActive: $isNavigationViewActive)
             }
             .onPageWillChange { index in
                 currentPin = category.pinArray[index]
@@ -41,19 +42,19 @@ struct PinPageView: View {
     }
 }
 
-struct PinListView_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewContext = PersistenceController.preview.container.viewContext
-        let newCategory = Category(context: viewContext)
-        
-        let newPin = Pin(context: viewContext)
-        
-        PinPageView(pageIndex: .first(), category: newCategory, currentPin: .constant(newPin))
-            .environmentObject(MapViewModel())
-            .environmentObject(CoreDataViewModel())
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct PinListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let viewContext = PersistenceController.preview.container.viewContext
+//        let newCategory = Category(context: viewContext)
+//
+//        let newPin = Pin(context: viewContext)
+//
+//        PinPageView(pageIndex: .first(), category: newCategory, currentPin: .constant(newPin))
+//            .environmentObject(MapViewModel())
+//            .environmentObject(CoreDataViewModel())
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
 
 extension Color {
     static let defaultColor = Color(#colorLiteral(red: 0.37858086824417114, green: 0.33240658044815063, blue: 0.9095856547355652, alpha: 1))
@@ -68,6 +69,7 @@ struct PageView: View {
     @State private var editPin: Pin?
     @State private var isComplete: Bool = false
     @Binding var currentPin: Pin?
+    @Binding var isNavigationViewActive: Bool
     
     var body: some View {
         VStack {
@@ -111,16 +113,15 @@ struct PageView: View {
                 }
                 
                 Spacer().frame(height: 25)
-                
-                NavigationLink {
-                    if pin.title == Optional(nil) {
-                        //실제로 클릭 시 들어가는 값은 editPin이다.
-                        WritingView(pin: editPin ?? pin, selection: cVM.selection, isComplete: $isComplete)
-                    } else {
-                        Text("디테일뷰") //MARK: Go to DetailView
+                if pin.title == Optional(nil) {
+                    NavigationLink(destination: PinDetailAddView(pin: editPin ?? pin, selection: cVM.selection, isComplete: $isComplete), isActive: self.$isNavigationViewActive) {
+                        bottomButton(pin)
                     }
-                } label: {
-                    bottomButton(pin)
+                    .isDetailLink(false)
+                } else {
+                    NavigationLink(destination: Text("디테일뷰")) {  //MARK: Go to DetailView
+                        bottomButton(pin)
+                    }
                 }
             }
             .padding(20)
@@ -145,16 +146,18 @@ struct PageView: View {
     private func copyPin(_ pin: Pin) -> Pin {
         let editPin = Pin(context: viewContext)
         editPin.emotion = pin.emotion
+        editPin.title = pin.title
         editPin.createdAt = pin.createdAt
         editPin.latitude = pin.latitude
         editPin.longtitude = pin.longtitude
+        editPin.content = pin.content
         
         return editPin
     }
     
     private func deletePin() {
         viewContext.delete(pin)
-
+        
         PersistenceController.shared.saveContext()
     }
     

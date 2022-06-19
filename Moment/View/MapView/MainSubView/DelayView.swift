@@ -21,18 +21,11 @@ struct DelayView: View {
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundColor(.black.opacity(0.8))
-            HStack {
-                Button {
-                    deletePin()
-                    isRemove = false
-                } label: {
-                    textEdit(text: "삭제하기", color: Color.red)
-                }
-                Button {
-                    print()
-                } label: {
-                    textEdit(text: "작성하기", color: Color.defaultColor)
-                }
+            Button {
+                deletePin()
+                isRemove = false
+            } label: {
+                textEdit(text: "삭제하기", color: Color.red)
             }
             .padding(.bottom, 10)
         }
@@ -47,7 +40,7 @@ struct DelayView: View {
     private func textEdit(text: String, color: Color) -> some View {
         Capsule()
             .fill(color)
-            .frame(width: 70, height: 25)
+            .frame(width: 120, height: 25)
             .overlay(
                 Text(text)
                     .font(.caption)

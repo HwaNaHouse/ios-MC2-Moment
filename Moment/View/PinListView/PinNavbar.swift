@@ -15,7 +15,6 @@ struct PinNavbar: View {
     @Binding public var isTitleToggle: Bool
     @Binding public var title: String
     
-    
     var body: some View {
         ZStack {
             Color.clear
@@ -41,6 +40,7 @@ struct PinNavbar: View {
                         }
                         .padding(.leading, 38)
                 })
+                
                 if isTitleToggle {
                     Spacer()
                     Text(title)
@@ -52,9 +52,7 @@ struct PinNavbar: View {
                     Spacer()
                 }
                 // write sheet 불러오기
-                Button(action: {
-                   
-                }, label: {
+                NavigationLink(destination: Text("새 핀 추가 뷰")) {
                     Image(systemName:"pencil")
                         .resizable()
                         .scaledToFit()
@@ -67,9 +65,9 @@ struct PinNavbar: View {
                                 .frame(width: 40, height: 40)
                         }
                         .padding(.trailing, 38)
-                })
+                }
+                .isDetailLink(false)
             }
-            
         }
         .frame(height: 70)
         .frame(maxHeight: .infinity, alignment: .top)
